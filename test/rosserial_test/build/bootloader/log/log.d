@@ -1,6 +1,6 @@
 log.o: /home/shanks/esp/esp-idf/components/log/log.c \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
@@ -12,7 +12,7 @@ log.o: /home/shanks/esp/esp-idf/components/log/log.c \
 
 /home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h:
 

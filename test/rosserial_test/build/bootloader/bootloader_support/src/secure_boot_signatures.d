@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  /home/shanks/esp/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- /home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/shanks/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
@@ -18,7 +18,7 @@ src/secure_boot_signatures.o: \
  /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/shanks/esp/esp-idf/components/micro-ecc/micro-ecc/uECC.h
 
-/home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h:
 

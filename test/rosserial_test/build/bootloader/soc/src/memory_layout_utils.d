@@ -1,7 +1,7 @@
 src//memory_layout_utils.o: \
  /home/shanks/esp/esp-idf/components/soc/src/memory_layout_utils.c \
  /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
- /home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
@@ -11,7 +11,7 @@ src//memory_layout_utils.o: \
 
 /home/shanks/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

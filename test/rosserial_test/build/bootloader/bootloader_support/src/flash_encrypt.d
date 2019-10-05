@@ -3,7 +3,7 @@ src/flash_encrypt.o: \
  /home/shanks/esp/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/shanks/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- /home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/bootloader_support/include/esp_image_format.h \
  /home/shanks/esp/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_flash_data_types.h \
@@ -45,7 +45,7 @@ src/flash_encrypt.o: \
 
 /home/shanks/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-/home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/bootloader_support/include/esp_image_format.h:
 

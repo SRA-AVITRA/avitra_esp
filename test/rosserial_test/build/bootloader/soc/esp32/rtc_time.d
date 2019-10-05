@@ -9,7 +9,7 @@ esp32/rtc_time.o: \
  /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/timer_group_reg.h \
  /home/shanks/esp/esp-idf/components/soc/esp32/soc_log.h \
  /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
- /home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h
 
 /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
@@ -30,7 +30,7 @@ esp32/rtc_time.o: \
 
 /home/shanks/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/shanks/avitra-auto-nav/src/rosserial_esp32/src/examples/echo/build/bootloader/../include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/bootloader/../include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h:
 /home/shanks/esp/esp-idf/components/soc/esp32/rtc_time.c:
