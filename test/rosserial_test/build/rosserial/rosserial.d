@@ -42,7 +42,7 @@ rosserial.o: /home/shanks/esp/esp-idf/components/rosserial/rosserial.cpp \
  /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/shanks/Downloads/velocity_control_of_motor/avitra_esp/rosserial_test/build/include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_timer.h \
  /home/shanks/esp/esp-idf/components/driver/include/driver/uart.h \
@@ -200,7 +200,7 @@ rosserial.o: /home/shanks/esp/esp-idf/components/rosserial/rosserial.cpp \
 
 /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/shanks/Downloads/velocity_control_of_motor/avitra_esp/rosserial_test/build/include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/newlib/include/assert.h:
 

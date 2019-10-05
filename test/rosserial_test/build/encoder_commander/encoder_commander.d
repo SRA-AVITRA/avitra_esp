@@ -15,7 +15,7 @@ encoder_commander.o: \
  /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
  /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/shanks/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -122,7 +122,7 @@ encoder_commander.o: \
 
 /home/shanks/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

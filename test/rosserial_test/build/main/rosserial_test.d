@@ -1,5 +1,5 @@
 rosserial_test.o: \
- /home/shanks/Downloads/velocity_control_of_motor/rosserial_test/main/rosserial_test.cpp \
+ /home/shanks/avitra_esp/test/rosserial_test/main/rosserial_test.cpp \
  /home/shanks/esp/esp-idf/components/rosserial_esp32/include/ros.h \
  /home/shanks/esp/esp-idf/components/rosserial_esp32/include/ros/node_handle.h \
  /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
@@ -43,7 +43,7 @@ rosserial_test.o: \
  /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
  /home/shanks/esp/esp-idf/components/esp32/include/esp_timer.h \
  /home/shanks/esp/esp-idf/components/driver/include/driver/uart.h \
@@ -113,7 +113,7 @@ rosserial_test.o: \
  /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/uart_channel.h \
  /home/shanks/esp/esp-idf/components/rosserial_esp32/include/auto_nav/ticks_msg.h \
  /home/shanks/esp/esp-idf/components/rosserial_esp32/include/auto_nav/velocity_msg.h \
- /home/shanks/Downloads/velocity_control_of_motor/rosserial_test/main/include/rosserial_test.h
+ /home/shanks/avitra_esp/test/rosserial_test/main/include/rosserial_test.h
 
 /home/shanks/esp/esp-idf/components/rosserial_esp32/include/ros.h:
 
@@ -201,7 +201,7 @@ rosserial_test.o: \
 
 /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/newlib/include/assert.h:
 
@@ -341,5 +341,5 @@ rosserial_test.o: \
 
 /home/shanks/esp/esp-idf/components/rosserial_esp32/include/auto_nav/velocity_msg.h:
 
-/home/shanks/Downloads/velocity_control_of_motor/rosserial_test/main/include/rosserial_test.h:
-/home/shanks/Downloads/velocity_control_of_motor/rosserial_test/main/./rosserial_test.cpp:
+/home/shanks/avitra_esp/test/rosserial_test/main/include/rosserial_test.h:
+/home/shanks/avitra_esp/test/rosserial_test/main/./rosserial_test.cpp:

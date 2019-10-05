@@ -1,7 +1,7 @@
 esp_app_desc.o: \
  /home/shanks/esp/esp-idf/components/app_update/esp_app_desc.c \
  /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h \
+ /home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h \
  /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -41,7 +41,7 @@ esp_app_desc.o: \
 
 /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/shanks/Downloads/velocity_control_of_motor/rosserial_test/build/include/sdkconfig.h:
+/home/shanks/avitra_esp/test/rosserial_test/build/include/sdkconfig.h:
 
 /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
 

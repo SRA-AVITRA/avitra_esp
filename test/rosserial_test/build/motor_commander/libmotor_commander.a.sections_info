@@ -1,4 +1,4 @@
-In archive /home/shanks/Downloads/velocity_control_of_motor/avitra_esp/rosserial_test/build/motor_commander/libmotor_commander.a:
+In archive /home/shanks/avitra_esp/test/rosserial_test/build/motor_commander/libmotor_commander.a:
 
 motor_commander.o:     file format elf32-xtensa-le
 
@@ -44,13 +44,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  19 .debug_line   00000441  00000000  00000000  00000c17  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 20 .debug_str    000006ed  00000000  00000000  00001058  2**0
+ 20 .debug_str    000006ce  00000000  00000000  00001058  2**0
                   CONTENTS, READONLY, DEBUGGING
- 21 .comment      0000003b  00000000  00000000  00001745  2**0
+ 21 .comment      0000003b  00000000  00000000  00001726  2**0
                   CONTENTS, READONLY
- 22 .xtensa.info  00000038  00000000  00000000  00001780  2**0
+ 22 .xtensa.info  00000038  00000000  00000000  00001761  2**0
                   CONTENTS, READONLY
- 23 .xt.lit       00000028  00000000  00000000  000017b8  2**0
+ 23 .xt.lit       00000028  00000000  00000000  00001799  2**0
                   CONTENTS, RELOC, READONLY
- 24 .xt.prop      00000198  00000000  00000000  000017e0  2**0
+ 24 .xt.prop      00000198  00000000  00000000  000017c1  2**0
                   CONTENTS, RELOC, READONLY

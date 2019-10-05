@@ -39,19 +39,21 @@ motor_commander_t motor_B = (motor_commander_t) {.name = "MOTOR_B", .id = 3, .de
                         .pwm_B = {.pwm_unit = MCPWM_UNIT_1, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM1B, .pwm_pin = MOTOR_B_PWM_B}  \
                     };
 
-void read_bot_motion_command(){
+void bot_motion(){
     float pwm_l = 0;
     float pwm_r = 0;
     while(true){
         rosserial_subscribe(&pwm_l, &pwm_r);
         motor_L.duty_cycle = ENCODING_FACTOR * pwm_l;
         motor_R.duty_cycle = ENCODING_FACTOR * pwm_r;
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
 
 void write_duty_cycle_loop(motor_commander_t* motor){
     while(true){
         write_duty_cycle(motor);
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
 
@@ -61,7 +63,7 @@ void app_main(){
     init_motor(&motor_L);
     init_motor(&motor_B);
     init_motor(&motor_R);
-    xTaskCreate(read_bot_motion_command, "teleop_receiver", 8192, NULL, 22, NULL);
+    xTaskCreate(bot_motion, "teleop_subscriber", 8192, NULL, 22, NULL);
     xTaskCreate(write_duty_cycle_loop, "drive_motor F", 8192, &motor_F, 23, NULL);
     xTaskCreate(write_duty_cycle_loop, "drive_motor L", 8192, &motor_L, 23, NULL);
     xTaskCreate(write_duty_cycle_loop, "drive_motor R", 8192, &motor_R, 23, NULL);

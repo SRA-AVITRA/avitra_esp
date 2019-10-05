@@ -45,7 +45,8 @@ void setup_rpm_calculator(encoder_commander_t* encoder){
 
 void print_encoder_status(encoder_commander_t *encoder){
     while(true){
-        // printf("%s:\tticks: %ld\trpm: %d\n", encoder->name, encoder->ticks_count, encoder->curr_rpm);
+        printf("%s:\tticks: %llu\trpm: %d\n", encoder->name, encoder->ticks_count, encoder->curr_rpm);
         // printf("%s:\ttotal_ticks: %ld\tA: %d\tB: %d\n", encoder->name, encoder->total_ticks, gpio_get_level(encoder->enc_intr), gpio_get_level(encoder->enc_dir));
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
