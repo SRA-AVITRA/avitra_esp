@@ -7,8 +7,8 @@ typedef struct{
     char  name[10];
     int   id;
     int   curr_rpm;
-    volatile long long int ticks_count;
-    volatile long long int total_ticks;
+    volatile long int ticks_count;
+    volatile long int total_ticks;
     gpio_num_t enc_intr;
     gpio_num_t enc_dir;
     esp_timer_handle_t periodic_timer;

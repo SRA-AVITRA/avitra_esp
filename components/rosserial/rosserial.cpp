@@ -23,7 +23,7 @@ void rosserial_setup(){  // Initialize ROS
   velocity.motor_R = 0;
 }
 
-void rosserial_publish(long long unsigned int* ticks_L, long long unsigned int* ticks_R){
+void rosserial_publish(volatile long int* ticks_L, volatile long int* ticks_R){
   ticks.motor_L = *ticks_L;
   ticks.motor_R = *ticks_R;
   espPub.publish(&ticks);  // publish the msg

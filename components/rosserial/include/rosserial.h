@@ -7,7 +7,7 @@ extern "C" {
 
 void rosserial_setup();
 
-void rosserial_publish(long long unsigned int* ticks_L, long long unsigned int* ticks_R);
+void rosserial_publish(volatile long int* ticks_L,volatile long int* ticks_R);
 
 void rosserial_subscribe(float* duty_L, float* duty_R);
 
