@@ -1,1 +1,3 @@
 /rosserial_test/build/*
+/motor_test/build/*
+/encoder_test/build/*
