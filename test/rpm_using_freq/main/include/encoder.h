@@ -6,7 +6,8 @@
 typedef struct{
     char  name[10];
     int   id;
-    int   curr_rpm;
+    float   curr_rpm;
+    float   esp_curr_rpm;
     volatile long int ticks_count;
     volatile long int total_ticks;
     gpio_num_t enc_intr;
@@ -18,8 +19,6 @@ void init_encoder(encoder_t *encoder);    //TODO: add parameter for type of edge
 
 void IRAM_ATTR enc_isr_handler(encoder_t* encoder);
 
-void IRAM_ATTR calculate_rpm(encoder_t* encoder);
-
-void setup_rpm_calculator(encoder_t* encoder);
+void calculate_rpm();
 
 #endif
