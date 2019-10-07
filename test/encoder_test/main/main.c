@@ -8,10 +8,10 @@
 #include "pin_defs.h"
 #include "encoder_test.h"
 
-encoder_commander_t encoder_F = {.name = "ENCODER_F", .id = 0, .enc_intr = ENCODER_F_A, .enc_dir = ENCODER_F_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
-encoder_commander_t encoder_L = {.name = "ENCODER_L", .id = 1, .enc_intr = ENCODER_L_A, .enc_dir = ENCODER_L_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
-encoder_commander_t encoder_R = {.name = "ENCODER_R", .id = 2, .enc_intr = ENCODER_R_A, .enc_dir = ENCODER_R_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
-encoder_commander_t encoder_B = {.name = "ENCODER_B", .id = 3, .enc_intr = ENCODER_B_A, .enc_dir = ENCODER_B_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
+encoder_t encoder_F = {.name = "ENCODER_F", .id = 0, .enc_intr = ENCODER_F_A, .enc_dir = ENCODER_F_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
+encoder_t encoder_L = {.name = "ENCODER_L", .id = 1, .enc_intr = ENCODER_L_A, .enc_dir = ENCODER_L_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
+encoder_t encoder_R = {.name = "ENCODER_R", .id = 2, .enc_intr = ENCODER_R_A, .enc_dir = ENCODER_R_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
+encoder_t encoder_B = {.name = "ENCODER_B", .id = 3, .enc_intr = ENCODER_B_A, .enc_dir = ENCODER_B_B, .ticks_count = 0, .total_ticks = 0, .curr_rpm = 0};
 
 void app_main(){
     init_encoder(&encoder_F);

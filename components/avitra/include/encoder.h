@@ -1,5 +1,5 @@
-#ifndef _ENCODER_TEST_H
-#define _ENCODER_TEST_H
+#ifndef _ENCODER_H
+#define _ENCODER_H
 
 #include "init_sra.h"
 
