@@ -20,26 +20,23 @@ motor_t motor_R = (motor_t) {.name = "MOTOR_R", .id = 2, .desr_rpm = 200, .Kp = 
                         .pwm_B = {.pwm_unit = MCPWM_UNIT_1, .pwm_timer = MCPWM_TIMER_0, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM0B, .pwm_pin = MOTOR_R_PWM_B}  \
                     };
 
-void initialize()
-{
-    init_motor(&motor_L);
+void initialize(){
+    // init_motor(&motor_L);
     init_motor(&motor_R);
-    gpio_set_direction(MOTOR_L_PWM_A, GPIO_MODE_OUTPUT); 
-    gpio_set_direction(MOTOR_L_PWM_B, GPIO_MODE_OUTPUT); 
+    // gpio_set_direction(MOTOR_L_PWM_A, GPIO_MODE_OUTPUT); 
+    // gpio_set_direction(MOTOR_L_PWM_B, GPIO_MODE_OUTPUT); 
     gpio_set_direction(MOTOR_R_PWM_A, GPIO_MODE_OUTPUT);        
     gpio_set_direction(MOTOR_R_PWM_B, GPIO_MODE_OUTPUT);   
-    gpio_set_level(MOTOR_L_PWM_A, 0);
-    gpio_set_level(MOTOR_L_PWM_B, 1);  
-    gpio_set_level(MOTOR_R_PWM_A, 0);
-    gpio_set_level(MOTOR_R_PWM_B, 1);   
-
+    // gpio_set_level(MOTOR_L_PWM_A, 0);
+    // gpio_set_level(MOTOR_L_PWM_B, 1);  
+    gpio_set_level(MOTOR_R_PWM_A, 1);
+    gpio_set_level(MOTOR_R_PWM_B, 0);
 }
 
-void app_main()
-{
+void app_main(){
     initialize();
+    xTaskCreate(calculate_rpm, "rpm_cal", 8192, NULL, 23, NULL);
     while(true){
-        printf("Ticks_L = %ld\t Ticks_R = %ld\n",motor_L.encoder.total_ticks,motor_R.encoder.total_ticks);
-        vTaskDelay(1 / portTICK_RATE_MS);
+        vTaskDelay(100 / portTICK_RATE_MS);
     }
 }
