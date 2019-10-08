@@ -6,11 +6,13 @@
 typedef struct{
     char  name[10];
     int   id;
-    int   curr_rpm;
+    float   curr_rpm;
     volatile long int ticks_count;
     volatile long int total_ticks;
-    gpio_num_t enc_intr;
-    gpio_num_t enc_dir;
+	//volatile bool flag; 
+    gpio_num_t enc_intr0;
+    //gpio_num_t enc_dir;
+    gpio_num_t enc_intr1;
     esp_timer_handle_t periodic_timer;
 }encoder_t;
 
