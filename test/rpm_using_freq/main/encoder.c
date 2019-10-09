@@ -1,15 +1,17 @@
+// THIS METHOD WILL GIVE A NEW VALUE OF RPM EVERY 13 TICKS
+
 #include "freertos/FreeRTOS.h"
 #include "esp_timer.h"
 #include "freertos/task.h"
 #include "encoder.h"
 #include "pin_defs.h"
 
-#define RPM_FACTOR 1000000*60*5/135
+#define RPM_FACTOR 1000000*60*13/135
 
 int64_t time = 0;
 int64_t pre_time = 0;
 int rpm = 0;
-int ticks_count_in_ISR =0;
+volatile int ticks_count_in_ISR = 0;
 
 void IRAM_ATTR enc_isr_handler(encoder_t* encoder)
 {
@@ -20,7 +22,7 @@ void IRAM_ATTR enc_isr_handler(encoder_t* encoder)
     else{
         encoder->ticks_count--;
     }
-    if(ticks_count_in_ISR > 4)
+    if(ticks_count_in_ISR > 12)
     {
         pre_time = time;
         time = esp_timer_get_time();    //update time

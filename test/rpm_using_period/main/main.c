@@ -24,7 +24,7 @@ void initialize()
 {
     init_motor(&motor_L);
     init_motor(&motor_R);
-    motor_R.duty_cycle = 80;
+    motor_R.duty_cycle = 100;
     write_duty_cycle(&motor_R);
    
 }
