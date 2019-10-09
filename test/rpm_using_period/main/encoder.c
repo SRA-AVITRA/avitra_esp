@@ -37,7 +37,7 @@ void init_encoder(encoder_t* encoder){
 }
 
 void calculate_rpm(encoder_t* encoder){
-    encoder->curr_rpm = encoder->ticks_count * 5.000;    //(1000000*60)/(135*111111) = 4.0000400004
+    encoder->curr_rpm = encoder->ticks_count * 2.500;    //(1000000*60)/(135*111111) = 4.0000400004
     encoder->total_ticks +=  encoder->ticks_count;
     encoder->ticks_count = 0;
     vTaskDelay(1 / portTICK_RATE_MS);
@@ -52,6 +52,6 @@ void setup_rpm_calculator(encoder_t* encoder){
     };
 
     esp_timer_create(&periodic_timer_args, &(encoder->periodic_timer));
-    esp_timer_start_periodic(encoder->periodic_timer, 44444);
+    esp_timer_start_periodic(encoder->periodic_timer, 88888);
     printf("setup_rpm_calculator() ENDS\n");
 }
