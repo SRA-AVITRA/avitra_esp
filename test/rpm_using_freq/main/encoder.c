@@ -4,26 +4,29 @@
 #include "encoder.h"
 #include "pin_defs.h"
 
-#define RPM_FACTOR 10000*60/135
+#define RPM_FACTOR 1000000*60*5/135
 
 int64_t time = 0;
 int64_t pre_time = 0;
 int rpm = 0;
+int ticks_count_in_ISR =0;
 
 void IRAM_ATTR enc_isr_handler(encoder_t* encoder)
 {
+    ticks_count_in_ISR++;
     if(gpio_get_level(encoder->enc_dir)== 0){
         encoder->ticks_count++;
     }
     else{
         encoder->ticks_count--;
     }
-    pre_time = time;
-    time = esp_timer_get_time();    //update time
-    if(time != pre_time)
-        rpm = RPM_FACTOR / (int64_t)((time - pre_time)/100);
-    else
-        rpm = 0;
+    if(ticks_count_in_ISR > 4)
+    {
+        pre_time = time;
+        time = esp_timer_get_time();    //update time
+        rpm = RPM_FACTOR / (int64_t)((time - pre_time));
+        ticks_count_in_ISR = 0;
+    }
 }
 
 void init_encoder(encoder_t* encoder){

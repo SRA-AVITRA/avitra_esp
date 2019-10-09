@@ -22,7 +22,7 @@ motor_t motor_R = (motor_t) {.name = "MOTOR_R", .id = 2, .desr_rpm = 200, .Kp = 
 
 void initialize(){
     init_motor(&motor_R);
-    motor_R.duty_cycle = 80;
+    motor_R.duty_cycle = 100;
     write_duty_cycle(&motor_R);
 }
 
