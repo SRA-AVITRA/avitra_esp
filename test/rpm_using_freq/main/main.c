@@ -21,16 +21,9 @@ motor_t motor_R = (motor_t) {.name = "MOTOR_R", .id = 2, .desr_rpm = 200, .Kp = 
                     };
 
 void initialize(){
-    // init_motor(&motor_L);
     init_motor(&motor_R);
-    // gpio_set_direction(MOTOR_L_PWM_A, GPIO_MODE_OUTPUT); 
-    // gpio_set_direction(MOTOR_L_PWM_B, GPIO_MODE_OUTPUT); 
-    gpio_set_direction(MOTOR_R_PWM_A, GPIO_MODE_OUTPUT);        
-    gpio_set_direction(MOTOR_R_PWM_B, GPIO_MODE_OUTPUT);   
-    // gpio_set_level(MOTOR_L_PWM_A, 0);
-    // gpio_set_level(MOTOR_L_PWM_B, 1);  
-    gpio_set_level(MOTOR_R_PWM_A, 1);
-    gpio_set_level(MOTOR_R_PWM_B, 0);
+    motor_R.duty_cycle = 80;
+    write_duty_cycle(&motor_R);
 }
 
 void app_main(){
