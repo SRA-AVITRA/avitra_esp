@@ -21,37 +21,28 @@ motor_t motor_R = (motor_t) {.name = "MOTOR_R", .id = 2, .desr_rpm = 200, .Kp = 
                         .pwm_B = {.pwm_unit = MCPWM_UNIT_1, .pwm_timer = MCPWM_TIMER_0, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM0B, .pwm_pin = MOTOR_R_PWM_B}  \
                     };
 
-void initialize()
-{
-    init_motor(&motor_L);
+void initialize(){
     init_motor(&motor_R);
     rosserial_setup();
-    // motor_R.duty_cycle = 100;
-    // write_duty_cycle(&motor_R);  
 }
 
-void drive()
-{
-    while(1)
-    {
+void drive(){
+    while(1){
         calculate_duty_cycle(&motor_R);     // write_duty_cycle already called in this function
         vTaskDelay(10/portTICK_RATE_MS);
     }
 }
 
-void get_data()
-{   
-    while(1)
-    {
+void get_data(){   
+    while(1){
+        rosserial_publish(&motor_L.encoder, &motor_R.encoder);
         rosserial_subscribe(&motor_R);
         vTaskDelay(10/portTICK_RATE_MS);
     }
 }
 
-void app_main()
-{
+void app_main(){
     initialize();
-    
     xTaskCreatePinnedToCore(get_data, "rosserial_subscribe", 8192, NULL, 22, NULL, 0);
     xTaskCreatePinnedToCore(drive, "drive", 8192, NULL, 23, NULL, 1);
 }

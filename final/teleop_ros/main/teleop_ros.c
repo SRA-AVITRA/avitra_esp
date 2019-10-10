@@ -9,8 +9,6 @@
 #include "motor.h"
 #include "rosserial.h"
 
-#define MOTOR_KP_STEP 0.005
-#define MOTOR_KD_STEP 1.0
 #define MAXPWM 65.0
 #define MINPWM 35.0
 #define ENCODING_FACTOR (MAXPWM)/40.0
