@@ -4,7 +4,7 @@
 void init_interrupt(gpio_num_t NUM_GPIO){
     gpio_config_t io_conf;
     printf("init_interrupt(%d)\n", NUM_GPIO);
-    io_conf.intr_type = GPIO_INTR_POSEDGE;
+    io_conf.intr_type = GPIO_INTR_ANYEDGE;
     io_conf.mode = GPIO_MODE_INPUT;
     io_conf.pin_bit_mask = ((uint64_t)1 << NUM_GPIO);
     io_conf.pull_up_en = 1;

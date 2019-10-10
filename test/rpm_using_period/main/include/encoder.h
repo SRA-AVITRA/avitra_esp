@@ -14,6 +14,7 @@ typedef struct{
     //gpio_num_t enc_dir;
     gpio_num_t enc_intr1;
     esp_timer_handle_t periodic_timer;
+    bool dir;
 }encoder_t;
 
 void init_encoder(encoder_t *encoder);    //TODO: add parameter for type of edge

@@ -6,7 +6,7 @@
 
 void IRAM_ATTR enc_isr_handler0(encoder_t* encoder)
 {   
-    if(gpio_get_level(encoder->enc_intr1)== 0){
+    if(encoder->dir){
         encoder->ticks_count++;
     }
     else
@@ -17,12 +17,12 @@ void IRAM_ATTR enc_isr_handler0(encoder_t* encoder)
 
 void IRAM_ATTR enc_isr_handler1(encoder_t* encoder)
 {   
-   if(gpio_get_level(encoder->enc_intr0)== 0){
-           encoder->ticks_count--;
+   if(encoder->dir){
+           encoder->ticks_count++;
        }
        else
        {
-           encoder->ticks_count++;
+           encoder->ticks_count--;
        }
  }
 void init_encoder(encoder_t* encoder){
@@ -37,7 +37,7 @@ void init_encoder(encoder_t* encoder){
 }
 
 void calculate_rpm(encoder_t* encoder){
-    encoder->curr_rpm = encoder->ticks_count * 2.500;    //(1000000*60)/(135*111111) = 4.0000400004
+    encoder->curr_rpm = encoder->ticks_count * 1.250;    //(1000000*60)/(135*111111) = 4.0000400004
     encoder->total_ticks +=  encoder->ticks_count;
     encoder->ticks_count = 0;
     vTaskDelay(1 / portTICK_RATE_MS);

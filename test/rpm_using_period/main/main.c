@@ -34,7 +34,7 @@ void app_main()
     initialize();
     while(true){
     	//printf("Ticks_L= %ld\t Ticks_R %ld\n",motor_L.encoder.total_ticks,motor_R.encoder.total_ticks);
-        printf("Ticks_L = %ld\t RPM_L = %f\t Ticks_R = %ld\t RPM_R = %f\n",motor_L.encoder.total_ticks,motor_L.encoder.curr_rpm,motor_R.encoder.total_ticks,motor_R.encoder.curr_rpm);
-        vTaskDelay(1 / portTICK_RATE_MS);
+        printf("Ticks_L = %ld\t RPM_L = %f\t Ticks_R = %ld\t RPM_R = %f\t R_flag = %d\n",motor_L.encoder.total_ticks,motor_L.encoder.curr_rpm,motor_R.encoder.total_ticks,motor_R.encoder.curr_rpm,motor_R.encoder.dir);
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }

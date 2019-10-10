@@ -11,6 +11,7 @@ void init_motor(motor_t* motor){
 
 void write_duty_cycle(motor_t* motor){
     if(motor->duty_cycle > 0){
+        motor->encoder.dir=true;
         if(motor->duty_cycle > 100)
             motor->duty_cycle = 100;
         
@@ -21,6 +22,7 @@ void write_duty_cycle(motor_t* motor){
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
     else if(motor->duty_cycle < 0){
+        motor->encoder.dir=false;
         if(motor->duty_cycle < -100)
             motor->duty_cycle = -100;
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, abs(motor->duty_cycle));
@@ -35,4 +37,6 @@ void write_duty_cycle(motor_t* motor){
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, 100);
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
+
+
 }
