@@ -1,7 +1,6 @@
 #include "ros.h"
-#include "auto_nav/ticks_msg.h"
-#include "auto_nav/velocity_msg.h"
 #include "rosserial.h"
+#include "auto_nav/tuning_msg.h"
 
 ros::NodeHandle nh;
 
@@ -26,7 +25,7 @@ void rosserial_setup(){  // Initialize ROS
 void rosserial_subscribe(motor_t* motor){
   motor->Kp = tuna.Kp;
   motor->Kd = tuna.Kd;
-  motor->Ki - tuna.ki;
+  motor->Ki = tuna.Ki;
   nh.spinOnce();
 }
 

@@ -52,6 +52,6 @@ void app_main()
 {
     initialize();
     
-    xTaskCreatePinnedToCore(rosserial_subscribe, "rosserial_subscribe", 8192, NULL, 22, NULL, 0);
+    xTaskCreatePinnedToCore(get_data, "rosserial_subscribe", 8192, NULL, 22, NULL, 0);
     xTaskCreatePinnedToCore(drive, "drive", 8192, NULL, 23, NULL, 1);
 }

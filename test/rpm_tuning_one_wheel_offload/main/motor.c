@@ -9,7 +9,7 @@ void init_motor(motor_t* motor){
     init_encoder(&(motor->encoder));
 }
 
-void calculate_duty_cycle(motor_commander_t* motor){
+void calculate_duty_cycle(motor_t* motor){
     motor->err = motor->desr_rpm - motor->encoder.curr_rpm;
     motor->prev_err = motor->err;
     motor->cum_err += motor->err;
@@ -28,7 +28,7 @@ void calculate_duty_cycle(motor_commander_t* motor){
     }
 
     if(motor->cum_err > 100)        //100 random have to find later
-        motor->cum_err=100
+        motor->cum_err=100;
             
     if(motor->duty_cycle > 100)
         motor->duty_cycle = 100;

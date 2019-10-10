@@ -27,6 +27,8 @@ typedef struct{
 
 void init_motor(motor_t *motor);
 
+void calculate_duty_cycle(motor_t* motor);
+
 void write_duty_cycle(motor_t *motor);
 
 #endif
