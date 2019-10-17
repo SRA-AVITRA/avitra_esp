@@ -1,41 +1,30 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "motor.h"
+//#include "motor_test.h"
 #include "pin_defs.h"
+#include "init_sra.h"
+#include "motor_test.h"
 
 void init_motor(motor_t* motor){
     init_mcpwm(&(motor->pwm_A));
     init_mcpwm(&(motor->pwm_B));
-    init_encoder(&(motor->encoder));
+
 }
 
-void calculate_duty_cycle(motor_t* motor){
-    motor->err = motor->desr_rpm - motor->encoder.curr_rpm;
-    motor->prev_err = motor->err;
-    motor->cum_err += motor->err;
-    motor->del_duty_cycle = (motor->Kp)*motor->err - (motor->Kd)*(motor->err-motor->prev_err) + (motor->Ki)*(motor->cum_err);
-    motor->duty_cycle += motor->del_duty_cycle;
-    if (motor->err * motor->prev_err < 0){  //check if err * prev_error < 0
-        motor->cum_err = 0;
-    }
-    if(motor->desr_rpm > 0){
-        if(motor->duty_cycle < 1)
-            motor->duty_cycle = 1;
-    }
-    else if(motor->desr_rpm < 0){
-        if(motor->duty_cycle > -1)
-            motor->duty_cycle = -1;
-    }
-
-    if(motor->cum_err > 100)    //100 random have to find later
-        motor->cum_err = 100;
-
-    write_duty_cycle(motor);
+void init_mcpwm(mcpwm_t* pwm){
+    mcpwm_gpio_init(pwm->pwm_unit, pwm->pwm_io_signals, pwm->pwm_pin);
+    mcpwm_config_t pwm_config;
+    pwm_config.frequency = 400;
+    pwm_config.cmpr_a = 0;
+    pwm_config.cmpr_b = 0;
+    pwm_config.counter_mode = MCPWM_UP_COUNTER;
+    pwm_config.duty_mode = MCPWM_DUTY_MODE_0;
+    mcpwm_init(pwm->pwm_unit, pwm->pwm_timer, &pwm_config);
 }
+
 
 void write_duty_cycle(motor_t* motor){
     if(motor->duty_cycle > 0){
-        motor->encoder.dir=true;
         if(motor->duty_cycle > 100)
             motor->duty_cycle = 100;
         
@@ -46,7 +35,6 @@ void write_duty_cycle(motor_t* motor){
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
     else if(motor->duty_cycle < 0){
-        motor->encoder.dir=false;
         if(motor->duty_cycle < -100)
             motor->duty_cycle = -100;
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, abs(motor->duty_cycle));

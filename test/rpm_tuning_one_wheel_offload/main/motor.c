@@ -27,13 +27,8 @@ void calculate_duty_cycle(motor_t* motor){
             motor->duty_cycle = -1;
     }
 
-    if(motor->cum_err > 100)        //100 random have to find later
-        motor->cum_err=100;
-            
-    if(motor->duty_cycle > 100)
-        motor->duty_cycle = 100;
-    else if(motor->duty_cycle < -100)
-        motor->duty_cycle = -100;
+    if(motor->cum_err > 100)    //100 random have to find later
+        motor->cum_err = 100;
 
     write_duty_cycle(motor);
 }
@@ -66,6 +61,4 @@ void write_duty_cycle(motor_t* motor){
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, 100);
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
-
-
 }

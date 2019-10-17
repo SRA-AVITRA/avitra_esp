@@ -29,6 +29,6 @@ void initialize(){
 void app_main(){
     initialize();
     while(true){
-        vTaskDelay(1 / portTICK_RATE_MS);
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }

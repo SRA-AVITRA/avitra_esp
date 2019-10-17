@@ -18,8 +18,8 @@ void init_encoder(encoder_t *encoder);    //TODO: add parameter for type of edge
 
 void IRAM_ATTR enc_isr_handler(encoder_t* encoder);
 
-void IRAM_ATTR calculate_rpm(encoder_t* encoder);
+void IRAM_ATTR calculate_ticks(encoder_t* encoder);
 
-void setup_rpm_calculator(encoder_t* encoder);
+void setup_ticks_calculator(encoder_t* encoder);
 
 #endif

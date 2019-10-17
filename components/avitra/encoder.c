@@ -4,27 +4,40 @@
 #include "encoder.h"
 #include "pin_defs.h"
 
-void IRAM_ATTR enc_isr_handler(encoder_t* encoder)
-{
-    if(gpio_get_level(encoder->enc_dir)== 0){
+void IRAM_ATTR enc_isr_handler0(encoder_t* encoder)
+{   
+    if(encoder->dir){
         encoder->ticks_count++;
     }
-    else{
+    else
+    {
         encoder->ticks_count--;
     }
-}
+ }
 
+void IRAM_ATTR enc_isr_handler1(encoder_t* encoder)
+{   
+   if(encoder->dir){
+           encoder->ticks_count++;
+       }
+       else
+       {
+           encoder->ticks_count--;
+       }
+ }
 void init_encoder(encoder_t* encoder){
     printf("init_encoder()\n");
-    init_gpio(encoder->enc_dir, GPIO_MODE_INPUT);
-    init_interrupt(encoder->enc_intr);
-	gpio_isr_handler_add(encoder->enc_intr, enc_isr_handler, (void*) encoder);
+    //init_gpio(encoder->enc_dir0, GPIO_MODE_INPUT);
+    init_interrupt(encoder->enc_intr0);
+    init_interrupt(encoder->enc_intr1);
+	gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
+    gpio_isr_handler_add(encoder->enc_intr1, enc_isr_handler1, (void*) encoder);
     setup_rpm_calculator(encoder);
     printf("init_encoder() END\n");
 }
 
 void calculate_rpm(encoder_t* encoder){
-    encoder->curr_rpm = encoder->ticks_count * 10.0001;    //(1000000*60)/(135*111111) = 4.0000400004
+    encoder->curr_rpm = encoder->ticks_count * 1.250;    //(1000000*60)/(135*111111) = 4.0000400004
     encoder->total_ticks +=  encoder->ticks_count;
     encoder->ticks_count = 0;
     vTaskDelay(1 / portTICK_RATE_MS);
@@ -39,6 +52,6 @@ void setup_rpm_calculator(encoder_t* encoder){
     };
 
     esp_timer_create(&periodic_timer_args, &(encoder->periodic_timer));
-    esp_timer_start_periodic(encoder->periodic_timer, 44444);
+    esp_timer_start_periodic(encoder->periodic_timer, 88888);
     printf("setup_rpm_calculator() ENDS\n");
 }

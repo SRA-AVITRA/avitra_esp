@@ -1,7 +1,7 @@
 #include "ros.h"
-#include "rosserial.h"
-#include "auto_nav/ticks_msg.h" 
+#include "auto_nav/ticks_msg.h"
 #include "auto_nav/velocity_msg.h"
+#include "rosserial.h"
 
 ros::NodeHandle nh;
 
@@ -29,7 +29,7 @@ void rosserial_publish(volatile long int* ticks_L, volatile long int* ticks_R){
   espPub.publish(&ticks);  // publish the msg
 }
 
-void rosserial_subscribe(float* duty_L, float* duty_R){ 
+void rosserial_subscribe(float* duty_L, float* duty_R){
   *duty_L = velocity.motor_L;
   *duty_R = velocity.motor_R;
   nh.spinOnce();

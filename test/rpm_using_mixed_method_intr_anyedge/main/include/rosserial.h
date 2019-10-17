@@ -1,6 +1,5 @@
 #ifndef ROSSERIAL_H
 #define ROSSERIAL_H
-#include "motor.h"
 
 #ifdef __cplusplus
 extern "C" {
