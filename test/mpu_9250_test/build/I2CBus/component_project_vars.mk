@@ -1,0 +1,8 @@
+# Automatically generated build file. Do not edit.
+COMPONENT_INCLUDES += $(IDF_PATH)/components/I2CBus/include
+COMPONENT_LDFLAGS += -L$(BUILD_DIR_BASE)/I2CBus -lI2CBus
+COMPONENT_LINKER_DEPS += 
+COMPONENT_SUBMODULES += 
+COMPONENT_LIBRARIES += I2CBus
+COMPONENT_LDFRAGMENTS += 
+component-I2CBus-build: 
