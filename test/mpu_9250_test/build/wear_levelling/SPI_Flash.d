@@ -1,30 +1,108 @@
 SPI_Flash.o: \
- /Users/akshay/esp/esp-idf/components/wear_levelling/SPI_Flash.cpp \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log.h \
- /Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h \
- /Users/akshay/esp/esp-idf/components/wear_levelling/private_include/SPI_Flash.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/esp/esp-idf/components/wear_levelling/private_include/Flash_Access.h \
- /Users/akshay/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h
+ /home/shanks/esp/esp-idf/components/wear_levelling/SPI_Flash.cpp \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h \
+ /home/shanks/esp/esp-idf/components/wear_levelling/private_include/SPI_Flash.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
+ /home/shanks/esp/esp-idf/components/wear_levelling/private_include/Flash_Access.h \
+ /home/shanks/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log.h:
+/home/shanks/esp/esp-idf/components/log/include/esp_log.h:
 
-/Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
 
-/Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/wear_levelling/private_include/SPI_Flash.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h:
+/home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 
-/Users/akshay/esp/esp-idf/components/wear_levelling/private_include/Flash_Access.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 
-/Users/akshay/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
-/Users/akshay/esp/esp-idf/components/wear_levelling/./SPI_Flash.cpp:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
+
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
+
+/home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h:
+
+/home/shanks/esp/esp-idf/components/wear_levelling/private_include/SPI_Flash.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_err.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/stdio.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h:
+
+/home/shanks/esp/esp-idf/components/wear_levelling/private_include/Flash_Access.h:
+
+/home/shanks/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
+/home/shanks/esp/esp-idf/components/wear_levelling/./SPI_Flash.cpp:

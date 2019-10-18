@@ -6,7 +6,6 @@
 void init_motor(motor_t* motor){
     init_mcpwm(&(motor->pwm_A));
     init_mcpwm(&(motor->pwm_B));
-    init_encoder(&(motor->encoder));
 }
 
 void calculate_duty_cycle(motor_t* motor){

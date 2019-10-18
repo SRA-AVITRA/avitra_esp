@@ -1,345 +1,117 @@
 transport.o: \
- /Users/akshay/esp/esp-idf/components/tcp_transport/transport.c \
- /Users/akshay/esp/esp-idf/components/esp-tls/esp_tls.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/sys/socket.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/lwipopts.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/time.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/sys/time.h \
- /Users/akshay/esp/esp-idf/components/vfs/include/sys/ioctl.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_task.h \
- /Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/corebits.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
- /Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_system.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/esp/esp-idf/components/esp32/include/esp_attr.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_idf_version.h \
- /Users/akshay/esp/esp-idf/components/lwip/include/apps/sntp/sntp.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/debug.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/arch.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/cc.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/errno.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/projdefs.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/portable.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/deprecated_definitions.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/portmacro.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_private/crosscore_int.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_timer.h \
- /Users/akshay/esp/esp-idf/components/heap/include/esp_heap_caps.h \
- /Users/akshay/esp/esp-idf/components/heap/include/multi_heap.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/portbenchmark.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/task.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/list.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/semphr.h \
- /Users/akshay/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/sys/poll.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/netif.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/stats.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/mem.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/memp.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
- /Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/port/include/esp_mem.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_time.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/bignum.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecp.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pk.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/md.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/rsa.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdsa.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/cipher.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_util.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/asn1.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/dhm.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdh.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_debug.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/entropy.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha512.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ctr_drbg.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/aes.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/port/include/aes_alt.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/port/include/esp32/aes.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_types.h \
- /Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/aes.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/error.h \
- /Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/certs.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h \
- /Users/akshay/esp/esp-idf/components/tcp_transport/include/esp_transport.h \
- /Users/akshay/esp/esp-idf/components/tcp_transport/private_include/esp_transport_utils.h
+ /home/shanks/esp/esp-idf/components/tcp_transport/transport.c \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/string.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/string.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/queue.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h \
+ /home/shanks/esp/esp-idf/components/tcp_transport/include/esp_transport.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
+ /home/shanks/esp/esp-idf/components/tcp_transport/include/esp_transport_utils.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/time.h
 
-/Users/akshay/esp/esp-idf/components/esp-tls/esp_tls.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/sys/socket.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/opt.h:
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/lwipopts.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/time.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/sys/time.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/Users/akshay/esp/esp-idf/components/vfs/include/sys/ioctl.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_task.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/hal.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
+/home/shanks/esp/esp-idf/components/newlib/include/string.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/string.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h:
+/home/shanks/esp/esp-idf/components/esp32/include/rom/queue.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/corebits.h:
+/home/shanks/esp/esp-idf/components/log/include/esp_log.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
 
-/Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_system.h:
+/home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h:
+/home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 
-/Users/akshay/esp/esp-idf/components/esp32/include/esp_attr.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h:
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_idf_version.h:
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/include/apps/sntp/sntp.h:
+/home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h:
+/home/shanks/esp/esp-idf/components/tcp_transport/include/esp_transport.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/debug.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_err.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/arch.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/cc.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/types.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/errno.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/types.h:
 
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
+/home/shanks/esp/esp-idf/components/tcp_transport/include/esp_transport_utils.h:
 
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/projdefs.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/portable.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/deprecated_definitions.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/portmacro.h:
-
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime.h:
-
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h:
-
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h:
-
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_private/crosscore_int.h:
-
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_timer.h:
-
-/Users/akshay/esp/esp-idf/components/heap/include/esp_heap_caps.h:
-
-/Users/akshay/esp/esp-idf/components/heap/include/multi_heap.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/portbenchmark.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/mpu_wrappers.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/task.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/list.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/queue.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/semphr.h:
-
-/Users/akshay/esp/esp-idf/components/freertos/include/freertos/queue.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h:
-
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/sys/poll.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/netif.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/err.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/stats.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/mem.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/memp.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
-
-/Users/akshay/esp/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/port/include/esp_mem.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_time.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/bignum.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecp.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pk.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/md.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/rsa.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdsa.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/cipher.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_util.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/asn1.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/dhm.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdh.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_debug.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/entropy.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha512.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ctr_drbg.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/aes.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/port/include/aes_alt.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/port/include/esp32/aes.h:
-
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_types.h:
-
-/Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/aes.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/error.h:
-
-/Users/akshay/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/certs.h:
-
-/Users/akshay/esp/esp-idf/components/log/include/esp_log.h:
-
-/Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h:
-
-/Users/akshay/esp/esp-idf/components/tcp_transport/include/esp_transport.h:
-
-/Users/akshay/esp/esp-idf/components/tcp_transport/private_include/esp_transport_utils.h:
-/Users/akshay/esp/esp-idf/components/tcp_transport/./transport.c:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/time.h:
+/home/shanks/esp/esp-idf/components/tcp_transport/./transport.c:

@@ -1,69 +1,102 @@
 esp32/cpu_util.o: \
- /Users/akshay/esp/esp-idf/components/soc/esp32/cpu_util.c \
- /Users/akshay/esp/esp-idf/components/esp32/include/esp_attr.h \
- /Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/cpu.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/corebits.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
- /Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
- /Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_assert.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
- /Users/akshay/esp/esp-idf/components/soc/include/soc/rtc_periph.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_gpio_channel.h \
- /Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h
+ /home/shanks/esp/esp-idf/components/soc/esp32/cpu_util.c \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h \
+ /home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/cpu.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h
 
-/Users/akshay/esp/esp-idf/components/esp32/include/esp_attr.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/Users/akshay/Desktop/Wall-E_v2.1/mpu_9250_test/build/include/sdkconfig.h:
+/home/shanks/avitra_esp/test/mpu_9250_test/build/include/sdkconfig.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/cpu.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/cpu.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/corebits.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/hal.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h:
 
-/Users/akshay/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_assert.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h:
 
-/Users/akshay/esp/esp-idf/components/soc/include/soc/rtc_periph.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/rtc_gpio_channel.h:
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
 
-/Users/akshay/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h:
-/Users/akshay/esp/esp-idf/components/soc/esp32/cpu_util.c:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/cpu_util.c:
