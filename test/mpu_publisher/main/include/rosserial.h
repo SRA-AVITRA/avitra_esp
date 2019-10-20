@@ -1,6 +1,5 @@
 #ifndef ROSSERIAL_H
 #define ROSSERIAL_H
-#include "motor.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -9,10 +8,6 @@ extern "C" {
 void rosserial_setup();
 
 void rosserial_publish(float* op);
-
-void rosserial_subscribe(motor_t* motor);
-
-void rosserial_spinonce();
 
 #ifdef __cplusplus
 }

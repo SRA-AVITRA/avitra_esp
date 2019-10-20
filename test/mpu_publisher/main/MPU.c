@@ -87,11 +87,11 @@ void start_mpu(){
     
     //CHECK IF MPU IS ACTIVE
     while(ret != ESP_OK)     {
-        printf("INIT FAILED... Retry\n");
+        //printf("INIT FAILED... Retry\n");
         vTaskDelay(100/ portTICK_RATE_MS);
         ret = mpu9250_init(I2C_MASTER_NUM);
     }
-    printf("INIT SUCESS...\n"); 
+    //printf("INIT SUCESS...\n"); 
 }
 
 void shift_buf_mag(uint8_t* buf_1, int16_t* buf_2, int len){
@@ -100,10 +100,66 @@ void shift_buf_mag(uint8_t* buf_1, int16_t* buf_2, int len){
     buf_2[2] = ((buf_1[5] << 8) + buf_1[4]);
 }
 
-void getmag(uint8_t* mag_rd, int16_t* mag_raw_value, float* angle){
+void mag_calibration(){
+    uint16_t ii = 0, sample_count = 128;
+    float mag_offset[3] = {0, 0, 0}, mag_scale[3] = {0, 0, 0};
+    int16_t mag_max[3] = {-32767, -32767, -32767}, mag_min[3] = {32767, 32767, 32767}, mag_temp[3] = {0, 0, 0};
+
+    //printf("Mag Calibration: Wave device in a figure eight until done!\n");
+    vTaskDelay(1000 / portTICK_RATE_MS);
+
+    // shoot for ~fifteen seconds of mag data
+    for(ii = 0; ii < sample_count; ii++){
+        get_mag_raw(mag_temp);  // Read the mag data   
+        if(!mag_temp[0] && !mag_temp[1])
+            while(true) //printf("NEED RESET!!!\n");
+        
+        for (int jj = 0; jj < 3; jj++){
+            if(mag_temp[jj] > mag_max[jj])  mag_max[jj] = mag_temp[jj];
+            if(mag_temp[jj] < mag_min[jj])  mag_min[jj] = mag_temp[jj];
+        }
+        vTaskDelay(10 / portTICK_RATE_MS);  // at 100 Hz, new mag data is available every 10 ms
+        //printf("Calibrating... (%d %%)\n",ii*100/sample_count);
+    }
+    //printf("mag_min :\t%d\t%d\n", mag_min[0], mag_min[1]);
+    //printf("mag_max :\t%d\t%d\n", mag_max[0], mag_max[1]);
+    
+    // Get hard iron correction
+    mag_offset[0]  = (mag_max[0] + mag_min[0]) / 2.0;  // get offset in x axis
+    mag_offset[1]  = (mag_max[1] + mag_min[1]) / 2.0;  // get offset in y axis
+    mag_offset[2]  = (mag_max[2] + mag_min[2]) / 2.0;  // get offset in z axis
+    //printf("mag_offset:\t%f\t%f\n", mag_offset[0], mag_offset[1]);
+    
+    // Get soft iron correction estimate
+    mag_scale[0]  = (mag_max[0] - mag_min[0]) / 2.0;  // get average x axis max chord length in counts
+    mag_scale[1]  = (mag_max[1] - mag_min[1]) / 2.0;  // get average y axis max chord length in counts
+    mag_scale[2]  = (mag_max[2] - mag_min[2]) / 2.0;  // get average z axis max chord length in counts
+
+    float avg_rad = (mag_scale[0] + mag_scale[1] + mag_scale[2]) / 3.0;
+
+    mag_scale[0] = avg_rad / mag_scale[0];   // mag scales in G
+    mag_scale[1] = avg_rad / mag_scale[1];
+    mag_scale[2] = avg_rad / mag_scale[2];
+    //printf("mag_scale :\t%f\t%f\n", mag_scale[0], mag_scale[1]);
+
+    //printf("Mag Calibration done!\n");
+}
+
+void get_mag_raw(int16_t* raw_value){
+    uint8_t mag_rd[BUFF_SIZE];
     int ret = mpu9250_read_mag(I2C_MASTER_NUM, mag_rd, BUFF_SIZE);
-    shift_buf_mag(mag_rd, mag_raw_value, BUFF_SIZE/2);
-    if(!mag_raw_value[0] && !mag_raw_value[1])  //Check if mpu requires re-initialization
-        start_mpu();    
-    *angle = atan2((double)(mag_raw_value[1]-offset_y)*scale_y,(double)(mag_raw_value[0]-offset_x)*scale_x) * (180 / 3.141592654);
+    shift_buf_mag(mag_rd, raw_value, BUFF_SIZE/2);
+}
+
+void get_yaw(float* angle){
+    double mx, my;
+    int16_t mag_raw[BUFF_SIZE / 2];
+    get_mag_raw(mag_raw);
+    if(!mag_raw[0] && !mag_raw[1])  //Check if mpu requires re-initialization
+        start_mpu();
+    mx = (double)mag_raw[0] - offset_x;
+    my = (double)mag_raw[1] - offset_y;
+    mx *= scale_x;
+    my *= scale_y;
+    *angle = atan2(my,mx) * (180 / 3.141592654) + 180;
 }

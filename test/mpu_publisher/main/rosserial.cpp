@@ -4,21 +4,17 @@
 
 ros::NodeHandle nh;
 
-std_msgs::Float32 yaw;
-ros::Publisher espPub("yaw", &yaw);
-
+std_msgs::Float32 angle;
+ros::Publisher espPub("yaw", &angle);
 
 void rosserial_setup(){  // Initialize ROS
   nh.initNode();
   nh.advertise(espPub);
-  yaw.data=0;
+  angle.data = 0;
 }
 
 void rosserial_publish(float* op){
-  yaw.data=*op;
-  espPub.publish(&yaw);  // publish the msg
-}
-
-void rosserial_spinonce(){
+  angle.data = *op;
+  espPub.publish(&angle);  // publish the msg
   nh.spinOnce();
 }
