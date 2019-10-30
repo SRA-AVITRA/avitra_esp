@@ -1,59 +1,59 @@
-portasm.o: /home/shanks/esp/esp-idf/components/freertos/portasm.S \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/coreasm.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie-asm.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/specreg.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/system.h \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/shanks/avitra_esp/test/mpu_test/build/include/sdkconfig.h \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_timer.h \
- /home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h
+portasm.o: /home/shweta/esp/esp-idf/components/freertos/portasm.S \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/coreasm.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/xtensa/config/core-isa.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/corebits.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
+ /home/shweta/Desktop/avitra_esp/test/mpu_test/build/include/sdkconfig.h \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_timer.h \
+ /home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/coreasm.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/coreasm.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/hal.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
+/home/shweta/esp/esp-idf/components/newlib/include/xtensa/config/core-isa.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie-asm.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie-asm.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/specreg.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/corebits.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/system.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h:
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/shanks/avitra_esp/test/mpu_test/build/include/sdkconfig.h:
+/home/shweta/Desktop/avitra_esp/test/mpu_test/build/include/sdkconfig.h:
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h:
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_timer.h:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_timer.h:
 
-/home/shanks/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h:
-/home/shanks/esp/esp-idf/components/freertos/./portasm.S:
+/home/shweta/esp/esp-idf/components/freertos/include/freertos/xtensa_rtos.h:
+/home/shweta/esp/esp-idf/components/freertos/./portasm.S:

@@ -1,102 +1,123 @@
 esp32/cpu_util.o: \
- /home/shanks/esp/esp-idf/components/soc/esp32/cpu_util.c \
- /home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h \
- /home/shanks/avitra_esp/test/mpu_test/build/include/sdkconfig.h \
- /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/cpu.h \
- /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
- /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h \
- /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h \
- /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
- /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
- /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
- /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
- /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
- /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
- /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
- /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
- /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
- /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
- /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
- /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
- /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
- /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
- /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h
+ /home/shweta/esp/esp-idf/components/soc/esp32/cpu_util.c \
+ /home/shweta/esp/esp-idf/components/esp32/include/esp_attr.h \
+ /home/shweta/Desktop/avitra_esp/test/mpu_test/build/include/sdkconfig.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/cpu.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/corebits.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/hal.h \
+ /home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/xtensa/config/core-isa.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shweta/esp/esp-idf/components/esp_common/include/esp_assert.h \
+ /home/shweta/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shweta/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shweta/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
+ /home/shweta/esp/esp-idf/components/soc/include/soc/rtc_periph.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_gpio_channel.h \
+ /home/shweta/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h
 
-/home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h:
+/home/shweta/esp/esp-idf/components/esp32/include/esp_attr.h:
 
-/home/shanks/avitra_esp/test/mpu_test/build/include/sdkconfig.h:
+/home/shweta/Desktop/avitra_esp/test/mpu_test/build/include/sdkconfig.h:
 
-/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/cpu.h:
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/cpu.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
+/home/shweta/esp/esp-idf/components/newlib/include/stdint.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
+/home/shweta/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/corebits.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/hal.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h:
+/home/shweta/esp/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
+/home/shweta/esp/esp-idf/components/newlib/include/xtensa/config/core-isa.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h:
+/home/shweta/esp/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
 
-/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 
-/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
+/home/shweta/esp/esp-idf/components/esp_common/include/esp_assert.h:
 
-/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shweta/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
+/home/shweta/esp/esp-idf/components/newlib/include/stdlib.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
+/home/shweta/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
+/home/shweta/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
+/home/shweta/esp/esp-idf/components/newlib/include/newlib.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/config.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/reent.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
+/home/shweta/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/_types.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
+/home/shweta/esp/esp-idf/components/newlib/include/machine/_types.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/lock.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
+/home/shweta/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
+/home/shweta/esp/esp-idf/components/newlib/include/machine/stdlib.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
+/home/shweta/esp/esp-idf/components/newlib/include/alloca.h:
 
-/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
+/home/shweta/esp/esp-idf/components/newlib/include/assert.h:
 
-/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
+/home/shweta/esp/esp-idf/components/esp_common/include/esp_bit_defs.h:
 
-/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
-/home/shanks/esp/esp-idf/components/soc/esp32/cpu_util.c:
+/home/shweta/esp/esp-idf/components/soc/include/soc/rtc_periph.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/rtc_gpio_channel.h:
+
+/home/shweta/esp/esp-idf/components/soc/esp32/include/soc/gpio_pins.h:
+/home/shweta/esp/esp-idf/components/soc/esp32/cpu_util.c:
