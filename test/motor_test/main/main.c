@@ -1,6 +1,4 @@
-
-
-/////////All the motors turn in cockwise direction. To change the dirrection swap the .pwm_pin parameter of the respective motor/////////
+/////////All the motors turn in clockwise direction/////////
 
 #include <stdio.h>
 #include <string.h>
@@ -45,8 +43,11 @@ void bot_motion(){
             if(pwm == 30)
                 flag = false;
         }
-        else if(pwm > 10 && ~flag)
+        else if(pwm > 10 && ~flag){
             pwm--;
+            if(pwm == 10)
+                flag = true;
+        }
         else
             pwm = 0;
 
@@ -59,7 +60,6 @@ void bot_motion(){
         write_duty_cycle(&motor_R);
         write_duty_cycle(&motor_B);
         vTaskDelay(500 / portTICK_RATE_MS);
-    
     }
 }
 
@@ -69,7 +69,4 @@ void app_main(){
     init_motor(&motor_B);
     init_motor(&motor_R);
     xTaskCreate(bot_motion, "motor_test", 8192, NULL, 23, NULL);
-    while(true){
-        vTaskDelay(1 / portTICK_RATE_MS);        
-    }
 }
