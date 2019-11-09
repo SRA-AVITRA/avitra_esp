@@ -69,21 +69,29 @@ void i2c_master_init(){
 
 //Proceed only when MPU is initialised
 void start_bno(){   
-    int ret = bno_init(I2C_MASTER_NUM);
-    
-    //CHECK IF MPU IS ACTIVE
-    while(ret != ESP_OK)     {
-        printf("INIT FAILED... Retry\n");
-        vTaskDelay(100/ portTICK_RATE_MS);
-        ret = bno_init(I2C_MASTER_NUM);
+    int ret=write_byte(I2C_MASTER_NUM,0x28,0x3D,0x00);
+    vTaskDelay(30/portTICK_RATE_MS);
+    ret=write_byte(I2C_MASTER_NUM,0x28,0x3F,0x20);
+    vTaskDelay(30/portTICK_RATE_MS);
+    ret=write_byte(I2C_MASTER_NUM,0x28,0x3E,0x00);
+    vTaskDelay(10/portTICK_RATE_MS);
+    ret=write_byte(I2C_MASTER_NUM,0x28,0x07,0x00);
+    vTaskDelay(10/portTICK_RATE_MS);
+    ret=write_byte(I2C_MASTER_NUM,0x28,0x3F,0x00);
+    vTaskDelay(10/portTICK_RATE_MS);
+    ret=ESP_FAIL;
+    while(ret != ESP_OK){
+      ret=write_byte(I2C_MASTER_NUM,0x28,0x3D,0x0C);
+      printf("INIT FAILED\n");
     }
+
     printf("INIT SUCESS...\n"); 
 }
 
 void shift_buf_mag(uint8_t* buf_1, int16_t* buf_2){
-    buf_2[0] = ((buf_1[1] << 8) + buf_1[0]);
-    buf_2[1] = ((buf_1[3] << 8) + buf_1[2]);
-    buf_2[2] = ((buf_1[5] << 8) + buf_1[4]);
+    buf_2[0] = (((int16_t)buf_1[1] << 8) | buf_1[0]);
+    buf_2[1] = (((int16_t)buf_1[3] << 8) | buf_1[2]);
+    buf_2[2] = (((int16_t)buf_1[5] << 8) | buf_1[4]);
 }
 
 void get_euler(float *x, float *y, float *z)
@@ -91,28 +99,14 @@ void get_euler(float *x, float *y, float *z)
     uint8_t temp[6];
     int16_t raw[3];
     esp_err_t ret =read_byte(I2C_MASTER_NUM, 0x28, 0x1A, temp, 6);
-    vTaskDelay(50/portTICK_RATE_MS);
-    shift_buf_mag(raw, temp);
-    *x=raw[0];
-    *y=raw[1];
-    *z=raw[2];
+    if(ret != ESP_OK)
+    {
+        // printf("HAGAAAAAAAAAAAA\n");
+        start_bno();
+    }
+    shift_buf_mag(temp,raw);
+    *x=raw[0]/16.0;
+    *y=raw[1]/16.0;
+    *z=raw[2]/16.0;
 }
 
-// void get_mag_raw(int16_t* raw_value){
-//     uint8_t mag_rd[BUFF_SIZE];
-//     int ret = bno_read_mag(I2C_MASTER_NUM, mag_rd, BUFF_SIZE);
-//     shift_buf_mag(mag_rd, raw_value, BUFF_SIZE/2);
-// }
-
-// void get_yaw(float* angle){
-//     double mx, my;
-//     int16_t mag_raw[BUFF_SIZE / 2];
-//     get_mag_raw(mag_raw);
-//     if(!mag_raw[0] && !mag_raw[1])  //Check if mpu requires re-initialization
-//         start_mpu();
-//     mx = (double)mag_raw[0] - offset_x;
-//     my = (double)mag_raw[1] - offset_y;
-//     mx *= scale_x;
-//     my *= scale_y;
-//     *angle = atan2(my,mx) * (180 / 3.141592654) + 180;
-// }
