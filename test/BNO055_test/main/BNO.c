@@ -91,6 +91,7 @@ void get_euler(float *x, float *y, float *z)
     uint8_t temp[6];
     int16_t raw[3];
     esp_err_t ret =read_byte(I2C_MASTER_NUM, 0x28, 0x1A, temp, 6);
+    vTaskDelay(50/portTICK_RATE_MS);
     shift_buf_mag(raw, temp);
     *x=raw[0];
     *y=raw[1];
