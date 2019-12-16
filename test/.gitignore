@@ -8,4 +8,5 @@
 /rpm_using_mixed_method_intr_anyedge/build/*
 /mpu_test/build/*
 /mpu_publisher/build/*
+/BNO055_test/build/*
 *.DS_Store
