@@ -1,48 +1,135 @@
 src/security/security0.o: \
- /Users/akshay/esp/esp-idf/components/protocomm/src/security/security0.c \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log.h \
- /Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h \
- /Users/akshay/esp/esp-idf/components/protocomm/include/security/protocomm_security.h \
- /Users/akshay/esp/esp-idf/components/protocomm/include/security/protocomm_security0.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/session.pb-c.h \
- /Users/akshay/esp/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec1.pb-c.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h \
- /Users/akshay/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h
+ /home/shanks/esp/esp-idf/components/protocomm/src/security/security0.c \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/string.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/string.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h \
+ /home/shanks/esp/esp-idf/components/protocomm/include/security/protocomm_security.h \
+ /home/shanks/esp/esp-idf/components/protocomm/include/security/protocomm_security0.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/session.pb-c.h \
+ /home/shanks/esp/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/limits.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/sec1.pb-c.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h \
+ /home/shanks/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
 
-/Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/include/security/protocomm_security.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/include/security/protocomm_security0.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/session.pb-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec1.pb-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
 
-/Users/akshay/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h:
-/Users/akshay/esp/esp-idf/components/protocomm/src/security/security0.c:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/types.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/string.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/string.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_err.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
+
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
+
+/home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
+
+/home/shanks/esp/esp-idf/components/log/include/esp_log.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
+
+/home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/include/security/protocomm_security.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/include/security/protocomm_security0.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/session.pb-c.h:
+
+/home/shanks/esp/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/limits.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/sec1.pb-c.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/sec0.pb-c.h:
+
+/home/shanks/esp/esp-idf/components/protocomm/proto-c/constants.pb-c.h:
+/home/shanks/esp/esp-idf/components/protocomm/src/security/security0.c:

@@ -1,111 +1,237 @@
 src/wps/wps_attr_build.o: \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_build.c \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/utils/includes.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/supplicant_opt.h \
- /Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/common.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/os.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_types.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/endian.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpabuf.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpa_debug.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log.h \
- /Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpa_debug.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/aes_wrap.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/crypto.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/sha256.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/random.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/dh_group5.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpabuf.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/common/ieee802_11_defs.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_i.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_defs.h \
- /Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_wifi_types.h \
- /Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_types_private.h \
- /Users/akshay/esp/esp-idf/components/esp_common/include/esp_interface.h \
- /Users/akshay/esp/esp-idf/components/esp_event/include/esp_event_base.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_parse.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps.h \
- /Users/akshay/esp/esp-idf/components/wpa_supplicant/include/esp_supplicant/esp_wps.h \
- /Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_build.c \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/includes.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/common.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/os.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/string.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/string.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_err.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/endian.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/endian.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpabuf.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpa_debug.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log.h \
+ /home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpa_debug.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/aes_wrap.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/crypto.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/common.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/dh_group5.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpabuf.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/sha256.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/random.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/ieee802_11_defs.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_i.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_defs.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_wifi_types.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/rom/queue.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_interface.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_attr_parse.h \
+ /home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_wifi_crypto_types.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/esp_dport_access.h \
+ /home/shanks/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/specreg.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-core-state.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/utils/includes.h:
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/includes.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/supplicant_opt.h:
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/common.h:
 
-/Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
+/home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/os.h:
 
-/Users/akshay/esp/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_types.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/common.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/os.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_types.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_err.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_bit_defs.h:
+/home/shanks/esp/esp-idf/components/newlib/include/string.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/endian.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h:
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpabuf.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpa_debug.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
 
-/Users/akshay/esp/esp-idf/components/log/include/esp_log_internal.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpa_debug.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/aes_wrap.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/crypto.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/sha256.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/string.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/random.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/crypto/dh_group5.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/types.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/utils/wpabuf.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/types.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/common/ieee802_11_defs.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_i.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_defs.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_wifi_types.h:
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
 
-/Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_types_private.h:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_err.h:
 
-/Users/akshay/esp/esp-idf/components/esp_common/include/esp_interface.h:
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-/Users/akshay/esp/esp-idf/components/esp_event/include/esp_event_base.h:
+/home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_parse.h:
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps.h:
+/home/shanks/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/include/esp_supplicant/esp_wps.h:
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 
-/Users/akshay/esp/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h:
-/Users/akshay/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_build.c:
+/home/shanks/esp/esp-idf/components/esp32/include/esp_assert.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/machine/endian.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/endian.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/port/include/byteswap.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpabuf.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpa_debug.h:
+
+/home/shanks/esp/esp-idf/components/log/include/esp_log.h:
+
+/home/shanks/esp/esp-idf/components/log/include/esp_log_internal.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpa_debug.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/aes_wrap.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/crypto.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/common.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/dh_group5.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/wpabuf.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/sha256.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/crypto/random.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wpa/ieee802_11_defs.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_i.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_defs.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_wifi_types.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/rom/queue.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_interface.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps_attr_parse.h:
+
+/home/shanks/esp/esp-idf/components/wpa_supplicant/include/wps/wps.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_wifi_crypto_types.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_attr.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/esp_dport_access.h:
+
+/home/shanks/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/hal.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtensa-versions.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-matmap.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/tie.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/specreg.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/corebits.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-core-state.h:
+
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h:
+/home/shanks/esp/esp-idf/components/wpa_supplicant/src/wps/wps_attr_build.c:

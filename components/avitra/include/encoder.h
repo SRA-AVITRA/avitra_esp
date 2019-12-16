@@ -9,7 +9,9 @@ typedef struct{
     float   curr_rpm;
     volatile long int ticks_count;
     volatile long int total_ticks;
+	//volatile bool flag; 
     gpio_num_t enc_intr0;
+    //gpio_num_t enc_dir;
     gpio_num_t enc_intr1;
     esp_timer_handle_t periodic_timer;
     bool dir;

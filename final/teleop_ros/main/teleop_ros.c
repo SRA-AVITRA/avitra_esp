@@ -49,10 +49,14 @@ void ticks_publisher(){
 
 void bot_motion(){
     init_encoder(&motor_R.encoder);
+    float pwm_f = 0;
+    float pwm_b = 0;
     float pwm_l = 0;
     float pwm_r = 0;
     while(true){
-        rosserial_subscribe(&pwm_l, &pwm_r);
+        rosserial_subscribe(&pwm_f, &pwm_b, &pwm_l, &pwm_r);
+        motor_F.duty_cycle = ENCODING_FACTOR * pwm_f;
+        motor_B.duty_cycle = ENCODING_FACTOR * pwm_b;
         motor_L.duty_cycle = ENCODING_FACTOR * pwm_l;
         motor_R.duty_cycle = ENCODING_FACTOR * pwm_r;
         write_duty_cycle(&motor_L);

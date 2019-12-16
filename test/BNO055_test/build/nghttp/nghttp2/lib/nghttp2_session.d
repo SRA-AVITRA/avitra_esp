@@ -1,75 +1,156 @@
 nghttp2/lib/nghttp2_session.o: \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.c \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.h \
- /Users/akshay/esp/esp-idf/components/nghttp/port/include/config.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/includes/nghttp2/nghttp2.h \
- /Users/akshay/esp/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_map.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_int.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_frame.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd_huffman.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_buf.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_stream.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h \
- /Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h \
- /Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_priority_spec.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_option.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_http.h \
- /Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_debug.h
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.c \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.h \
+ /home/shanks/esp/esp-idf/components/nghttp/port/include/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/newlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/config.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/features.h \
+ /home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/_ansi.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/types.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/alloca.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/string.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/string.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/includes/nghttp2/nghttp2.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/inttypes.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/stdint.h \
+ /home/shanks/esp/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_map.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_int.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_frame.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd_huffman.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_buf.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_stream.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h \
+ /home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h \
+ /home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h \
+ /home/shanks/esp/esp-idf/components/newlib/include/assert.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_priority_spec.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_option.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_http.h \
+ /home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_debug.h
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.h:
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/port/include/config.h:
+/home/shanks/esp/esp-idf/components/nghttp/port/include/config.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/includes/nghttp2/nghttp2.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_map.h:
+/home/shanks/esp/esp-idf/components/newlib/include/newlib.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_int.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/config.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_frame.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/features.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd.h:
+/home/shanks/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd_huffman.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_buf.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/reent.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_stream.h:
+/home/shanks/esp/esp-idf/components/newlib/include/_ansi.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_types.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/_types.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/lock.h:
 
-/Users/akshay/esp/esp-idf/components/newlib/platform_include/assert.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/types.h:
 
-/Users/akshay/Desktop/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/types.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/sched.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h:
+/home/shanks/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_priority_spec.h:
+/home/shanks/esp/esp-idf/components/newlib/include/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_option.h:
+/home/shanks/esp/esp-idf/components/newlib/include/machine/stdlib.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_http.h:
+/home/shanks/esp/esp-idf/components/newlib/include/alloca.h:
 
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_debug.h:
-/Users/akshay/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.c:
+/home/shanks/esp/esp-idf/components/newlib/include/string.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/string.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/includes/nghttp2/nghttp2.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/inttypes.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/sys/_intsup.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/stdint.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_map.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_int.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_frame.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_hd_huffman.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_buf.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_stream.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_outbound_item.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h:
+
+/home/shanks/esp/esp-idf/components/newlib/platform_include/assert.h:
+
+/home/shanks/avitra_esp/test/BNO055_test/build/include/sdkconfig.h:
+
+/home/shanks/esp/esp-idf/components/newlib/include/assert.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_priority_spec.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_option.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_http.h:
+
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_debug.h:
+/home/shanks/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_session.c:

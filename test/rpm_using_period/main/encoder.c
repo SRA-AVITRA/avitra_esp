@@ -41,7 +41,7 @@ void calculate_rpm(encoder_t* encoder){
     encoder->total_ticks +=  encoder->ticks_count;
     encoder->ticks_count = 0;
     vTaskDelay(1 / portTICK_RATE_MS);
-}
+} 
 
 void setup_rpm_calculator(encoder_t* encoder){
     printf("setup_rpm_calculator()\n");
