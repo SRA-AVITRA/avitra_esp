@@ -33,5 +33,6 @@ void app_main()
     initialize();
     while(true){
         vTaskDelay(10 / portTICK_RATE_MS);
+
     }
 }

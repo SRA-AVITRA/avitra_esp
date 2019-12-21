@@ -10,9 +10,9 @@ auto_nav::velocity_msg rpm;
 ros::Publisher espPub("rpm", &rpm);
 
 void callback(const auto_nav::tuning_msg& msg){
-  tuna.Kp=msg.Kp;
-  tuna.Kd=msg.Kd;
-  tuna.Ki=msg.Ki;
+  tuna.Kp = msg.Kp;
+  tuna.Kd = msg.Kd;
+  tuna.Ki = msg.Ki;
 }
 ros::Subscriber<auto_nav::tuning_msg> espSub("tuning", &callback);
 
@@ -31,10 +31,13 @@ void rosserial_publish(encoder_t* encoder_L, encoder_t* encoder_R){
   espPub.publish(&rpm);  // publish the msg
 }
 
-void rosserial_subscribe(motor_t* motor){
-  motor->Kp = tuna.Kp;
-  motor->Kd = tuna.Kd;
-  motor->Ki = tuna.Ki;
+void rosserial_subscribe(motor_t* motor_L, motor_t* motor_R){
+  motor_L->Kp = tuna.Kp;
+  motor_L->Kd = tuna.Kd;
+  motor_L->Ki = tuna.Ki;
+  motor_R->Kp = tuna.Kp;
+  motor_R->Kd = tuna.Kd;
+  motor_R->Ki = tuna.Ki;
   nh.spinOnce();
 }
 

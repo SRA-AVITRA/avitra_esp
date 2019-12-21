@@ -27,7 +27,6 @@ void IRAM_ATTR enc_isr_handler1(encoder_t* encoder)
  }
 void init_encoder(encoder_t* encoder){
     printf("init_encoder()\n");
-    //init_gpio(encoder->enc_dir0, GPIO_MODE_INPUT);
     init_interrupt(encoder->enc_intr0);
     init_interrupt(encoder->enc_intr1);
 	gpio_isr_handler_add(encoder->enc_intr0, (void*)enc_isr_handler0, (void*) encoder);

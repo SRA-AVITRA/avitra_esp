@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := rpm_using_period
+PROJECT_NAME := rpm_tuning
 
 include $(IDF_PATH)/make/project.mk
