@@ -23,6 +23,8 @@ typedef struct{
 
 void init_motor(motor_t *motor);
 
+float map(float input, float input_min, float input_max, float output_min, float output_max);
+
 void calculate_duty_cycle(motor_t* motor);
 
 void write_duty_cycle(motor_t *motor);

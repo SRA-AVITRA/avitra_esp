@@ -8,32 +8,34 @@ void init_motor(motor_t* motor){
     init_mcpwm(&(motor->pwm_B));
 }
 
+float map(float input, float input_min, float input_max, float output_min, float output_max){
+    float output = 0.0;
+    output = output_min + ((output_max - output_min) / (input_max - input_min)) * (input - input_min);
+    
+    if(output < output_min)
+        output = output_min;
+   else if(output > output_max)
+        output = output_max;
+
+    return output;
+}
+
 void calculate_duty_cycle(motor_t* motor){
     motor->err = motor->desr_rpm - motor->encoder.curr_rpm;
-    // if(motor->err > 15)
-    //     motor->err = 15;
-    // else if(motor->err < -15)
-    //     motor->err = -15;
-    motor->prev_err = motor->err;
     motor->cum_err += motor->err;
-    motor->del_duty_cycle = (motor->Kp)*motor->err - (motor->Kd)*(motor->err-motor->prev_err) + (motor->Ki)*(motor->cum_err);
-    motor->duty_cycle += motor->del_duty_cycle;
-    if(motor->err * motor->prev_err < 0){  //check if err * prev_error < 0
+    
+    if(motor->err * motor->prev_err < 0)  //check if err * prev_error < 0
         motor->cum_err = 0;
-    }
 
-    if(motor->desr_rpm > 0){
-        if(motor->duty_cycle < 1)
-            motor->duty_cycle = 1;
-    }
-    else if(motor->desr_rpm < 0){
-        if(motor->duty_cycle > -1)
-            motor->duty_cycle = -1;
-    }
+    if(motor->cum_err > 10)    //random have to find later
+        motor->cum_err = 10;
+    else if(motor->cum_err < -10)    //random have to find later
+        motor->cum_err = -10;
 
-    if(motor->cum_err > 100)    //100 random have to find later
-        motor->cum_err = 100;
-
+    motor->del_duty_cycle = (motor->Kp)*motor->err + (motor->Kd)*(motor->err-motor->prev_err) + (motor->Ki)*(motor->cum_err);
+    motor->duty_cycle = motor->del_duty_cycle;
+    motor->prev_err = motor->err;
+    
     write_duty_cycle(motor);
 }
 
