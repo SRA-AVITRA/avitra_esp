@@ -15,7 +15,9 @@ typedef struct{
     float Kd;
     float Ki; 
     float duty_cycle;
-    float del_duty_cycle;
+    float opt;
+    int64_t time;
+    int64_t prev_time;
     mcpwm_t pwm_A;
     mcpwm_t pwm_B;
     encoder_t encoder;
