@@ -18,8 +18,8 @@ motor_t motor_F = (motor_t) {.name = "MOTOR_F", .id = 0, .desr_rpm = 0, .Kp = 0.
 
 motor_t motor_L = (motor_t) {.name = "MOTOR_L", .id = 1, .desr_rpm = 0, .Kp = 0.0,  .Kd = 0.0, .duty_cycle = 0,  \
                         .encoder = {.name = "MOTOR_L", .id = 1, .curr_rpm = 0, .ticks_count = 0, .enc_intr0 = ENCODER_L_A, .enc_intr1 = ENCODER_L_B},  \
-                        .pwm_A = {.pwm_unit = MCPWM_UNIT_0, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_A, .pwm_io_signals = MCPWM1A, .pwm_pin = MOTOR_L_PWM_B}, \
-                        .pwm_B = {.pwm_unit = MCPWM_UNIT_0, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM1B, .pwm_pin = MOTOR_L_PWM_A}  \
+                        .pwm_A = {.pwm_unit = MCPWM_UNIT_0, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_A, .pwm_io_signals = MCPWM1A, .pwm_pin = MOTOR_L_PWM_A}, \
+                        .pwm_B = {.pwm_unit = MCPWM_UNIT_0, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM1B, .pwm_pin = MOTOR_L_PWM_B}  \
                     };
 
 motor_t motor_R = (motor_t) {.name = "MOTOR_R", .id = 2, .desr_rpm = 0, .Kp = 0.0,  .Kd = 0.0, .duty_cycle = 0, \

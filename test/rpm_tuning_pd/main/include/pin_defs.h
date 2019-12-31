@@ -16,8 +16,8 @@
     #define ENCODER_B_A     27
     #define ENCODER_B_B     26
     
-    #define MOTOR_L_PWM_A   25
-    #define MOTOR_L_PWM_B   23
+    #define MOTOR_L_PWM_A   23
+    #define MOTOR_L_PWM_B   25
     #define ENCODER_L_A     36
     #define ENCODER_L_B     39
 

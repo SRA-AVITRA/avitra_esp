@@ -30,7 +30,7 @@ void init_encoder(encoder_t* encoder){
     //init_gpio(encoder->enc_dir0, GPIO_MODE_INPUT);
     init_interrupt(encoder->enc_intr0);
     init_interrupt(encoder->enc_intr1);
-	gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
+	  gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
     gpio_isr_handler_add(encoder->enc_intr1, enc_isr_handler1, (void*) encoder);
     setup_rpm_calculator(encoder);
     printf("init_encoder() END\n");

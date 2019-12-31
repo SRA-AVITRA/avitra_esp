@@ -37,6 +37,6 @@ void rosserial_subscribe(motor_t* motor_L, motor_t* motor_R){
   nh.spinOnce();
 }
 
-void rosserial_spinonce(){
+  void rosserial_spinonce(){
   nh.spinOnce();
 }

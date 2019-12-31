@@ -63,7 +63,7 @@ void bot_motion(){
         write_duty_cycle(&motor_R);
         write_duty_cycle(&motor_F);
         write_duty_cycle(&motor_B);
-        vTaskDelay(1 / portTICK_RATE_MS);
+        vTaskDelay(2 / portTICK_RATE_MS);
     }
 }
 
