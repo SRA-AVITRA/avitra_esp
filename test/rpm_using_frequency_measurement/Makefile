@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := rpm_tuning
+PROJECT_NAME := rpm_using_frequency_measurement
 
 include $(IDF_PATH)/make/project.mk

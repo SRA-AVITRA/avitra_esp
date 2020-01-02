@@ -8,26 +8,6 @@ void init_motor(motor_t* motor){
     init_mcpwm(&(motor->pwm_B));
 }
 
-// void calculate_duty_cycle(motor_t* motor){
-//     motor->err = motor->desr_rpm - motor->encoder.curr_rpm;
-//     motor->cum_err += motor->err;
-    
-//     if(motor->err * motor->prev_err < 0)  //check if err * prev_error < 0
-//         motor->cum_err = 0;
-
-//     if(motor->cum_err > 10)    //random have to find later
-//         motor->cum_err = 10;
-//     else if(motor->cum_err < -10)    //random have to find later
-//         motor->cum_err = -10;
-
-//     motor->del_duty_cycle = (motor->Kp)*motor->err + (motor->Kd)*(motor->err-motor->prev_err) + (motor->Ki)*(motor->cum_err);
-//     motor->duty_cycle = motor->del_duty_cycle;
-//     motor->prev_err = motor->err;
-    
-//     write_duty_cycle(motor);
-// }
-
-
 void write_duty_cycle(motor_t* motor){
     if(motor->duty_cycle > 0){
         motor->encoder.dir=true;

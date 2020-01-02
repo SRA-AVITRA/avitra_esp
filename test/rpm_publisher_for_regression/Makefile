@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := rpm_using_freq
+PROJECT_NAME := rpm_publisher_for_regression
 
 include $(IDF_PATH)/make/project.mk
