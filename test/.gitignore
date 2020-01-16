@@ -12,6 +12,7 @@
 
 /rpm_tuning/build/*
 /rpm_publisher_for_regression/build/*
-
+/rpm_tuning_off_load_feed_forward/build/*
+/rpm_tuning_off_load_direct_pid/build/*
 
 *.DS_Store

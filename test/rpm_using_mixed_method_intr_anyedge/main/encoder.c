@@ -46,7 +46,6 @@ void setup_rpm_calculator(encoder_t* encoder){
 
 void init_encoder(encoder_t* encoder){
     printf("init_encoder()\n");
-    //init_gpio(encoder->enc_dir0, GPIO_MODE_INPUT);
     init_interrupt(encoder->enc_intr0);
     init_interrupt(encoder->enc_intr1);
 	gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
@@ -59,13 +58,13 @@ void calculate_rpm(encoder_t* encoder)
 {
     encoder->time_gap_upper_limit = esp_timer_get_time();
     encoder->const_period_count++;
-    if(encoder->ticks_count > 0)
+    if(encoder->ticks_count != 0)
     {
-        encoder->pre_time_gap = encoder->current_time_gap;
-        encoder->current_time_gap = encoder->time_gap_upper_limit - encoder->time_gap_lower_limit;
-        encoder->eq_time = time_window*encoder->const_period_count + encoder->pre_time_gap - encoder->current_time_gap;
-        encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/encoder->eq_time;
-        printf("encoder->ticks_count = %ld\t rpm = %f\n", encoder->ticks_count, encoder->curr_rpm);     
+        // encoder->pre_time_gap = encoder->current_time_gap;
+        // encoder->current_time_gap = encoder->time_gap_upper_limit - encoder->time_gap_lower_limit;
+        // encoder->eq_time = time_window*encoder->const_period_count + encoder->pre_time_gap - encoder->current_time_gap;
+        // encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/encoder->eq_time;
+        encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/(time_window*encoder->const_period_count + encoder->pre_time_gap - (encoder->time_gap_upper_limit - encoder->time_gap_lower_limit));
         encoder->ticks_count = 0;
         encoder->const_period_count = 0;
     }
@@ -73,5 +72,6 @@ void calculate_rpm(encoder_t* encoder)
     {
         encoder->curr_rpm = 0;
     }
+    printf("encoder->ticks_count = %ld\t rpm = %d\n", encoder->ticks_count, encoder->curr_rpm);     
     vTaskDelay(10 / portTICK_RATE_MS);
 }

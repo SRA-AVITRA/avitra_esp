@@ -4,45 +4,89 @@
 #include "motor.h"
 #include "pin_defs.h"
 #include <math.h>
+#include "esp_timer.h"
 
-void init_motor(motor_t* motor){
+#include "esp_system.h"
+#include "esp_err.h"
+#include "esp_log.h"
+
+void init_motor(motor_t *motor)
+{
     init_mcpwm(&(motor->pwm_A));
     init_mcpwm(&(motor->pwm_B));
 }
 
+void calculate_duty_cycle(motor_t *motor)
+{
+    motor->opt = 41.86257414592657 + 0.15232979*motor->desr_rpm;
 
-void calculate_duty_cycle(motor_t* motor){
-    motor->err = motor->desr_rpm - motor->encoder.curr_rpm;
-    // if(motor->id == 1)
+    motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
+
+    motor->pTerm = motor->Kp * motor->err;
+
+    motor->dTerm = motor->Kd * ((motor->err - motor->prev_err)*100);
+    
+    if (motor->err < 10 && motor->err > -10)
+    {
+        motor->cum_err += motor->err;
+        motor->iTerm = motor->Ki * motor->cum_err;
+        if (motor->iTerm > motor->iTerm_limit)
+        {
+            motor->iTerm = motor->iTerm_limit;
+        }
+        if (motor->iTerm < -motor->iTerm_limit)
+        {
+            motor->iTerm = -motor->iTerm_limit;
+        }
+    }
+    else
+    {
+        motor->iTerm = 0;
+    }
+
+    motor->duty_cycle = motor->opt + motor->pTerm + motor->dTerm + motor->iTerm;
+
+    // motor->duty_cycle = motor->duty_cycle*(1 - motor->alpha) + motor->prev_duty_cycle*(motor->alpha);
+
+    // motor->actual_duty_cycle = motor->duty_cycle;
+
+    // if (motor->duty_cycle > 100)
     // {
-	// 	motor->opt = (motor->desr_rpm/abs(motor->desr_rpm))*(29.72411863061209 +  9.31753403*pow(10,-1)*pow(abs(motor-> desr_rpm),1) - 1.05174732*pow(10,-2)*pow(abs(motor-> desr_rpm),2) + 4.09964372*pow(10,-5)*pow(abs(motor-> desr_rpm),3));
+    //     motor->duty_cycle = 100;
     // }
-    // else if(motor->id == 2)
+    // else if (motor->duty_cycle < 25)
     // {
-    // 	motor->opt = (motor->desr_rpm/abs(motor->desr_rpm))*(29.8253378318297 + 8.77361922*pow(10,-1)*pow(abs(motor-> desr_rpm),1) - 9.42125283*pow(10,-3)*pow(abs(motor-> desr_rpm),2) + 3.40221433*pow(10,-5)*pow(abs(motor-> desr_rpm),3));    	
+    //     motor->duty_cycle = 25;
     // }
-    motor->duty_cycle += motor->Kp * motor->err;
-    // motor->duty_cycle = motor->opt + (motor->Kp)*(motor->err) - (motor->Kd)*(motor->err)/(motor->time - motor->prev_time)*1000000;
-    // motor->prev_time = motor->time;
-    // motor->prev_err = motor->err;
+
+    // ESP_LOGI("calculate_duty_cycle", "calculated duty_cycle = %f, actual dutycycle = %f", motor->duty_cycle, motor->actual_duty_cycle);
+    // ESP_LOGI("PID", "PID TERMS : pre_error = %d, error_term = %d, kp*err = %f, kd*pre-err = %f, ki*int_err = %f, actual_motor->iterm = %f", motor->prev_err, motor->err, motor->Kp * motor->err, motor->dTerm, motor->iTerm, motor->Ki*motor->cum_err);
+    // ESP_LOGI("RPM", "RPM VALUES : desr_rpm = %d, prev_rpm = %d, current_rpm = %d \n", motor->desr_rpm, motor->encoder.prev_rpm, motor->encoder.curr_rpm);
+
+    motor->encoder.prev_rpm = motor->encoder.curr_rpm;
+    motor->prev_err = motor->err;
+    motor->prev_duty_cycle = motor->duty_cycle;
     write_duty_cycle(motor);
 }
 
-void write_duty_cycle(motor_t* motor){
-    if(motor->duty_cycle > 0){
+void write_duty_cycle(motor_t *motor)
+{
+    if (motor->duty_cycle > 0)
+    {
         motor->encoder.dir = true;
-        if(motor->duty_cycle > 100)
+        if (motor->duty_cycle > 100)
             motor->duty_cycle = 100;
-       
+
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, 0);
         mcpwm_set_duty_type(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, MCPWM_DUTY_MODE_0);
 
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, abs(motor->duty_cycle));
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
-    else if(motor->duty_cycle < 0){
+    else if (motor->duty_cycle < 0)
+    {
         motor->encoder.dir = false;
-        if(motor->duty_cycle < -100)
+        if (motor->duty_cycle < -100)
             motor->duty_cycle = -100;
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, abs(motor->duty_cycle));
         mcpwm_set_duty_type(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, MCPWM_DUTY_MODE_0);
@@ -50,17 +94,18 @@ void write_duty_cycle(motor_t* motor){
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, 0);
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
-    else if(motor->duty_cycle == -1){
+    else if (motor->duty_cycle == -1)
+    {
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, 0);
         mcpwm_set_duty_type(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, MCPWM_DUTY_MODE_0);
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, 0);
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
-    else{
+    else
+    {
         mcpwm_set_duty(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, 100);
         mcpwm_set_duty_type(motor->pwm_A.pwm_unit, motor->pwm_A.pwm_timer, motor->pwm_A.pwm_operator, MCPWM_DUTY_MODE_0);
         mcpwm_set_duty(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, 100);
         mcpwm_set_duty_type(motor->pwm_B.pwm_unit, motor->pwm_B.pwm_timer, motor->pwm_B.pwm_operator, MCPWM_DUTY_MODE_0);
     }
 }
-

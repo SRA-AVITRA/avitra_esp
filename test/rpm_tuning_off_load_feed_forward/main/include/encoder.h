@@ -6,7 +6,8 @@
 typedef struct{
     char  name[10];
     int   id;
-    int curr_rpm;
+    float   curr_rpm;
+    float   prev_rpm;
     volatile long int ticks_count;
     volatile long int total_ticks;
     gpio_num_t enc_intr0;
