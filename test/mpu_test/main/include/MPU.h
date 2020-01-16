@@ -6,6 +6,7 @@
 #include <time.h>
 #include "esp_system.h"
 #include "driver/i2c.h"
+#include "esp_timer.h"
 
 #define I2C_MASTER_SCL_IO    		21  		// gpio number for I2C master clock
 #define I2C_MASTER_SDA_IO    		22    		// gpio number for I2C master data 
@@ -17,6 +18,9 @@
 #define MPU9250_ADDR		0x68    			// slave address for BH1750 sensor
 #define MAG_ADDR 			0x0C
 #define MAG_START_ADDR 		0x03				//magnetometer start address
+#define ACCE_START_ADDR 	0x3B				//acce start address
+#define GYRO_START_ADDR 	0x43				//gyro start address
+
 #define WRITE_BIT  			I2C_MASTER_WRITE	// I2C master write
 #define READ_BIT   			I2C_MASTER_READ 	// I2C master read
 #define ACK_CHECK_EN   		0x1    				// I2C master will check ack from slave*/
@@ -37,12 +41,32 @@
 
 #define BUFF_SIZE 6
 
-//Calibration values
-#define offset_x 127.0
-#define offset_y 139.0
+#define PI 3.141592653589793238462643383279502884
 
-#define scale_x 0.805408
-#define scale_y 0.816262
+//Calibration values
+#define magCalibration_x 1.171875
+#define magCalibration_y 1.171875
+#define magCalibration_z 1.132812
+
+#define mag_offset_x 485.837341
+#define mag_offset_y 266.200195
+#define mag_offset_z -67.091797
+
+#define gyro_offset_x 5.946565
+#define gyro_offset_y 2.870229
+#define gyro_offset_z -0.015267
+
+#define acce_offset_x 0.014587
+#define acce_offset_y 0.021423
+#define acce_offset_z 0.496155
+
+#define scale_x 0.852330
+#define scale_y 0.978601
+#define scale_z 1.242424
+
+#define mRes 10.*4912./32760.0
+#define gRes 250.0/32768.0
+#define aRes 16.0/32768.0
 
 esp_err_t write_byte(i2c_port_t i2c_num, int8_t main_add, int8_t add, int8_t data);
 
@@ -63,16 +87,29 @@ void i2c_master_init();
 //Proceed only when MPU is initialise
 void start_mpu();
 
+//Read raw magnetometer values
+void get_mag_raw(int16_t* mag_raw);
+
+//Read raw magnetometer values
+void get_acce_raw(int16_t* acce_raw);
+
+//Read raw magnetometer values
+void get_gyro_raw(int16_t* gyro_raw);
+
 //Calibrate magnetometer
-void mag_calibration();
+void mpu_calibration();
 
 //Shift 8-bit values to 16-bit variable
 void shift_buf_mag(uint8_t* buf_1, int16_t* buf_2, int len);
 
-//Read raw magnetometer values
-void get_mag_raw(int16_t* mag_raw);
+void shift_buf(uint8_t* buf_1, int16_t* buf_2, int len);
 
-//Read magnetometer values
-void get_yaw(float* angle);
+void get_mag_sensitivity(float* magCal_x, float* magCal_y, float* magCal_z);
+
+void normalized_raw(int16_t* mag_raw, int16_t* acce_raw, int16_t* gyro_raw);
+
+void MahonyQuaternionUpdate(int16_t* mag_raw, int16_t* acce_raw, int16_t* gyro_raw);
+           
+void get_rpy(float* roll, float* pitch, float* yaw);
 
 #endif

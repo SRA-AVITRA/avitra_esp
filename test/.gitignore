@@ -1,6 +1,7 @@
 /rosserial_test/build/*
 /motor_test/build/*
 /encoder_test/build/*
+<<<<<<< HEAD
 /mpu_test/build/*
 /mpu_publisher/build/*
 /BNO055_test/build/*
@@ -16,3 +17,8 @@
 /rpm_tuning_off_load_direct_pid/build/*
 
 *.DS_Store
+=======
+/rpm_using_period/build/*
+/rpm_using_freq/build/*
+/mpu_test/build/*
+>>>>>>> 3b20cf5c1a2a9878bbaaa7d48532af9a90cff406
