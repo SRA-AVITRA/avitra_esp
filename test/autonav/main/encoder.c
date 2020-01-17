@@ -57,6 +57,8 @@ void calculate_rpm(encoder_t* encoder)
 {
     encoder->time_gap_upper_limit = esp_timer_get_time();
     encoder->const_period_count++;
+    // printf("ticks = %ld\n", encoder->ticks_count);
+    encoder->total_ticks += encoder->ticks_count;
     if(encoder->ticks_count != 0)
     {
         encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/(time_window*encoder->const_period_count + encoder->pre_time_gap - (encoder->time_gap_upper_limit - encoder->time_gap_lower_limit));
@@ -67,5 +69,6 @@ void calculate_rpm(encoder_t* encoder)
     {
         encoder->curr_rpm = 0;
     }
+    // printf("rpm = %f\n", encoder->curr_rpm);    
     vTaskDelay(10 / portTICK_RATE_MS);
 }
