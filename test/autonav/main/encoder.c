@@ -38,7 +38,6 @@ void setup_rpm_calculator(encoder_t* encoder){
             .arg = encoder,
             .name = encoder->name
     };
-
     esp_timer_create(&periodic_timer_args, &(encoder->periodic_timer));
     esp_timer_start_periodic(encoder->periodic_timer, time_window);
     printf("setup_rpm_calculator() ENDS\n");
@@ -48,7 +47,7 @@ void init_encoder(encoder_t* encoder){
     printf("init_encoder()\n");
     init_interrupt(encoder->enc_intr0);
     init_interrupt(encoder->enc_intr1);
-  gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
+    gpio_isr_handler_add(encoder->enc_intr0, enc_isr_handler0, (void*) encoder);
     gpio_isr_handler_add(encoder->enc_intr1, enc_isr_handler1, (void*) encoder);
     setup_rpm_calculator(encoder);
     printf("init_encoder() END\n");

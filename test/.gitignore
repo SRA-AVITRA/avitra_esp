@@ -6,6 +6,8 @@
 /mpu_publisher/build/*
 /BNO055_test/build/*
 
+/autonav/build/*
+
 /rpm_using_frequency_measurement/build/*
 /rpm_using_period_measurement/build/*
 /rpm_using_mixed_method/build/*
@@ -14,12 +16,9 @@
 /rpm_tuning/build/*
 /rpm_publisher_for_regression/build/*
 /rpm_tuning_off_load_feed_forward/build/*
-/rpm_tuning_off_load_direct_pid/build/*
+/rpm_tuning_off_load_direct_pid_2_wheel/build/*
+/rpm_tuning_off_load_direct_pid_one_wheel/build/*
 
 *.DS_Store
 =======
-/rpm_using_period/build/*
-/rpm_using_freq/build/*
-/mpu_test/build/*
-/autonav/build/*
 >>>>>>> 3b20cf5c1a2a9878bbaaa7d48532af9a90cff406
