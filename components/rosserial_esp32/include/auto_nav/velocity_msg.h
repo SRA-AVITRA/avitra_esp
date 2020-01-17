@@ -20,12 +20,15 @@ namespace auto_nav
       _motor_F_type motor_F;
       typedef float _motor_B_type;
       _motor_B_type motor_B;
+      typedef int8_t _command_type;
+      _command_type command;
 
     velocity_msg():
       motor_L(0),
       motor_R(0),
       motor_F(0),
-      motor_B(0)
+      motor_B(0),
+      command(0)
     {
     }
 
@@ -72,6 +75,13 @@ namespace auto_nav
       *(outbuffer + offset + 2) = (u_motor_B.base >> (8 * 2)) & 0xFF;
       *(outbuffer + offset + 3) = (u_motor_B.base >> (8 * 3)) & 0xFF;
       offset += sizeof(this->motor_B);
+      union {
+        int8_t real;
+        uint8_t base;
+      } u_command;
+      u_command.real = this->command;
+      *(outbuffer + offset + 0) = (u_command.base >> (8 * 0)) & 0xFF;
+      offset += sizeof(this->command);
       return offset;
     }
 
@@ -122,11 +132,19 @@ namespace auto_nav
       u_motor_B.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
       this->motor_B = u_motor_B.real;
       offset += sizeof(this->motor_B);
+      union {
+        int8_t real;
+        uint8_t base;
+      } u_command;
+      u_command.base = 0;
+      u_command.base |= ((uint8_t) (*(inbuffer + offset + 0))) << (8 * 0);
+      this->command = u_command.real;
+      offset += sizeof(this->command);
      return offset;
     }
 
     const char * getType(){ return "auto_nav/velocity_msg"; };
-    const char * getMD5(){ return "203d7f6e594d0b47858d9ee8070dd28f"; };
+    const char * getMD5(){ return "14a74004ee83a0fa43458b8508f7db44"; };
 
   };
 
