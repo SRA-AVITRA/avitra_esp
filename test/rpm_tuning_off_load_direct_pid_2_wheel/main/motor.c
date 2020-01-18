@@ -10,7 +10,9 @@
 #include "esp_err.h"
 #include "esp_log.h"
 
-int cum_err_count = 1;
+// int cum_err_factor = 5;
+int cum_err_factor = 5;
+
 void init_motor(motor_t *motor)
 {
     init_mcpwm(&(motor->pwm_A));
@@ -28,9 +30,17 @@ void calculate_duty_cycle(motor_t *motor)
     else
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
+        if(motor->err > -10 && motor->err < 10)
+        {
+            cum_err_factor = 10;
+        }
+        else 
+        {
+            cum_err_factor = 5;
+        }
         motor->pTerm = motor->Kp * motor->err;
         motor->dTerm = motor->Kd * ((motor->err - motor->prev_err)*100);
-        motor->cum_err += motor->err/5;
+        motor->cum_err += motor->err/cum_err_factor;
         motor->iTerm = motor->Ki * motor->cum_err;
         if (motor->iTerm > motor->iTerm_limit)
         {
