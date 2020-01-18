@@ -10,12 +10,18 @@
 #include "esp_err.h"
 #include "esp_log.h"
 
-float cum_err_factor = 5;
+float cum_err_factor = 0;
+float temp = 0;
 
 void init_motor(motor_t *motor)
 {
     init_mcpwm(&(motor->pwm_A));
     init_mcpwm(&(motor->pwm_B));
+}
+
+float map(float variable, float fron_min, float from_max, float to_min, float to_max)
+{
+    return((variable - fron_min)*(to_max - to_min)/(from_max - fron_min) + to_min);
 }
 
 void calculate_duty_cycle(motor_t *motor)
@@ -32,17 +38,29 @@ void calculate_duty_cycle(motor_t *motor)
     else
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
-        if(motor->err > -0.5 && motor->err < 0.5)
+        if(motor->err < 0.3 && motor->err > -0.3)
         {
-            cum_err_factor = 10;
+            if(motor->err < 0) {temp = -motor->err;}
+            else {temp = motor->err;}
+            cum_err_factor = map(temp, 0, motor->desr_rpm/10, 0, 1) / 5;
         }
-        else 
+        else
         {
-            cum_err_factor = 5;
+            cum_err_factor = 0.2;
         }
+        // cum_err_factor = map(temp, 0, motor->desr_rpm/10, 0, 1) / 5;
+        // if (motor->err > -0.4 && motor->err < 0.4)
+        // {
+        //     cum_err_factor = 10;
+        // }
+        // else 
+        // {
+        //     cum_err_factor = 5;
+        // }
         motor->pTerm = motor->Kp * motor->err;
         motor->dTerm = motor->Kd * ((motor->err - motor->prev_err)*100);
-        motor->cum_err += motor->err/cum_err_factor;
+        motor->cum_err += motor->err*cum_err_factor;
+        // motor->cum_err += motor->err/5;
         motor->iTerm = motor->Ki * motor->cum_err;
         if (motor->iTerm > motor->iTerm_limit)
         {
@@ -63,7 +81,7 @@ void calculate_duty_cycle(motor_t *motor)
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
     }
-    // ESP_LOGI("calculate_duty_cycle", "motor->err = %f\t motor->curr_rpm = %f\t cum_err_factor = %f", motor->err, motor->encoder.curr_rpm, cum_err_factor);
+    // ESP_LOGI("calculate_duty_cycle", "temp = %f\t motor->err = %f\t motor->curr_rpm = %f\t cum_err_factor = %f", temp, motor->err, motor->encoder.curr_rpm, cum_err_factor);
     write_duty_cycle(motor);
 }
 
