@@ -8,7 +8,8 @@ ros::NodeHandle nh;
 
 auto_nav::tuning_msg tuna;
 auto_nav::pid_response pr;
-ros::Publisher espPub("pid_response", &pr);
+auto_nav::velocity_msg rpm;
+ros::Publisher espPub("pid_response", &rpm);
 
 void callback(const auto_nav::tuning_msg& msg){
   tuna.Kp = msg.Kp;
@@ -28,22 +29,42 @@ void rosserial_setup()
   tuna.Ki = 0;
 }
 
-void rosserial_publish(motor_t* motor_R)
-{
-  pr.curr_rpm = motor_R->encoder.curr_rpm;
-  pr.prev_rpm  = motor_R->encoder.prev_rpm;
-  pr.duty_cycle = motor_R->duty_cycle;
-  pr.actual_duty_cycle = motor_R->actual_duty_cycle;
-  pr.desr_rpm = motor_R->desr_rpm;
-  pr.err = motor_R->err;
-  pr.prev_err = motor_R->prev_err;
-  pr.cum_err = motor_R->cum_err;
-  pr.pTerm = motor_R->pTerm;
-  pr.dTerm = motor_R->dTerm;
-  pr.iTerm = motor_R->iTerm;
-  pr.iTerm_limit = motor_R->iTerm_limit;
-  pr.alpha = motor_R->alpha;
-  espPub.publish(&pr);
+void rosserial_publish(motor_t* motor_L, motor_t* motor_R)
+{  
+  rpm.motor_L = motor_L->encoder.curr_rpm;
+  rpm.motor_R = motor_R->encoder.curr_rpm;
+  espPub.publish(&rpm);
+  // pr.name = motor_L->name;
+  // pr.curr_rpm = motor_L->encoder.curr_rpm;
+  // pr.prev_rpm  = motor_L->encoder.prev_rpm;
+  // pr.duty_cycle = motor_L->duty_cycle;
+  // pr.actual_duty_cycle = motor_L->actual_duty_cycle;
+  // pr.desr_rpm = motor_L->desr_rpm;
+  // pr.err = motor_L->err;
+  // pr.prev_err = motor_L->prev_err;
+  // pr.cum_err = motor_L->cum_err;
+  // pr.pTerm = motor_L->pTerm;
+  // pr.dTerm = motor_L->dTerm;
+  // pr.iTerm = motor_L->iTerm;
+  // pr.iTerm_limit = motor_L->iTerm_limit;
+  // pr.alpha = motor_L->alpha;
+  // espPub.publish(&pr);
+
+  // pr.name = motor_R->name;
+  // pr.curr_rpm = motor_R->encoder.curr_rpm;
+  // pr.prev_rpm  = motor_R->encoder.prev_rpm;
+  // pr.duty_cycle = motor_R->duty_cycle;
+  // pr.actual_duty_cycle = motor_R->actual_duty_cycle;
+  // pr.desr_rpm = motor_R->desr_rpm;
+  // pr.err = motor_R->err;
+  // pr.prev_err = motor_R->prev_err;
+  // pr.cum_err = motor_R->cum_err;
+  // pr.pTerm = motor_R->pTerm;
+  // pr.dTerm = motor_R->dTerm;
+  // pr.iTerm = motor_R->iTerm;
+  // pr.iTerm_limit = motor_R->iTerm_limit;
+  // pr.alpha = motor_R->alpha;
+  // espPub.publish(&pr);
 }
 
 void rosserial_subscribe(motor_t* motor_L, motor_t* motor_R){

@@ -5,12 +5,12 @@
 #include "encoder.h"
 
 typedef struct{
-    char  name[10];
     int   id;    
     float Kp;
     float Kd;
     float Ki;
 
+    char  name[10];    
     float duty_cycle;
     float actual_duty_cycle;
     float prev_duty_cycle;
