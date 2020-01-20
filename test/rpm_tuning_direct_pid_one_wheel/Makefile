@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := rpm_tuning_off_load_feed_forward
+PROJECT_NAME := rpm_tuning_direct_pid_one_wheel
 
 include $(IDF_PATH)/make/project.mk
