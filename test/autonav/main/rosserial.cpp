@@ -71,8 +71,3 @@ void rosserial_subscribe_rpm(float* rpm_L, float* rpm_R){
   nh.spinOnce();
 }
 
-void rosserial_publish_pid(float desr_rpm_L, float desr_rpm_R){
-  pid.motor_L = desr_rpm_L;
-  pid.motor_R = desr_rpm_R;
-  espPub_pid.publish(&pid);  // publish the msg
-}

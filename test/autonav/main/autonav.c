@@ -41,10 +41,9 @@ void ticks_publisher(){
     init_encoder(&motor_L.encoder);
     while(true){
         rosserial_publish_ticks(&motor_L.encoder.total_ticks, &motor_R.encoder.total_ticks);
-        rosserial_publish_pid(motor_L.desr_rpm, motor_R.desr_rpm);
         motor_L.encoder.total_ticks = 0;
         motor_R.encoder.total_ticks = 0;
-        vTaskDelay(2 / portTICK_RATE_MS);   // 1 results in delay in ros_pub when echoed
+        vTaskDelay(3 / portTICK_RATE_MS);   // 1 results in delay in ros_pub when echoed
     }
 }
 
