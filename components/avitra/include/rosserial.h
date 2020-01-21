@@ -1,6 +1,5 @@
 #ifndef ROSSERIAL_H
 #define ROSSERIAL_H
-#include "motor.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -8,12 +7,13 @@ extern "C" {
 
 void rosserial_setup();
 
-// void rosserial_publish(encoder_t* encoder_L, encoder_t* encoder_R);
-void rosserial_publish(motor_t* motor_R);
+void rosserial_publish_ticks(volatile long int* ticks_L,volatile long int* ticks_R);
 
-void rosserial_subscribe(motor_t* motor_L, motor_t* motor_R);
+void rosserial_subscribe_teleop(float* duty_F, float* duty_B, float* duty_L, float* duty_R);
 
-void rosserial_spinonce();
+void rosserial_subscribe_rpm(float* rpm_L, float* rpm_R);
+
+void rosserial_subscribe_command(int* command);
 
 #ifdef __cplusplus
 }

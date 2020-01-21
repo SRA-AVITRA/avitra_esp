@@ -15,6 +15,6 @@
 /rpm_tuning_direct_pid_one_wheel/build/*
 /rpm_tuning_direct_pid_two_wheel/build/*
 
-/autonav/build/*
+/teleop_ros/build/*
 
 *.DS_Store
