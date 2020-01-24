@@ -10,9 +10,6 @@
 #include "esp_err.h"
 #include "esp_log.h"
 
-// int cum_err_factor = 5;
-int cum_err_factor = 5;
-
 void init_motor(motor_t *motor)
 {
     init_mcpwm(&(motor->pwm_A));
@@ -21,7 +18,7 @@ void init_motor(motor_t *motor)
 
 void calculate_duty_cycle(motor_t *motor)
 {
-    if(motor->Kp == 0 && motor->Kd == 0 && motor->Ki == 0)
+    if (motor->desr_rpm == 0 || motor->Kp == 0 || motor->Ki == 0)
     {
         motor->err = 0;
         motor->cum_err = 0;
@@ -30,38 +27,24 @@ void calculate_duty_cycle(motor_t *motor)
     else
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
-        if(motor->err > -10 && motor->err < 10)
-        {
-            cum_err_factor = 10;
-        }
-        else 
-        {
-            cum_err_factor = 5;
-        }
         motor->pTerm = motor->Kp * motor->err;
-        motor->dTerm = motor->Kd * ((motor->err - motor->prev_err)*100);
-        motor->cum_err += motor->err/cum_err_factor;
+        motor->dTerm = motor->Kd * 100 * (motor->err - motor->prev_err);
+        motor->cum_err += motor->err / 5;
         motor->iTerm = motor->Ki * motor->cum_err;
-        if (motor->iTerm > motor->iTerm_limit)
+        if (motor->iTerm > abs(motor->desr_rpm) + 50)
         {
-            motor->iTerm = motor->iTerm_limit;
+            motor->iTerm = 50;
         }
-        if (motor->iTerm < -motor->iTerm_limit)
+        else if (motor->iTerm < -abs(motor->desr_rpm) - 50)
         {
-            motor->iTerm = -motor->iTerm_limit;
+            motor->iTerm = -50;
         }
         motor->duty_cycle = motor->pTerm + motor->dTerm + motor->iTerm;
-        motor->duty_cycle = motor->duty_cycle*(1 - motor->alpha) + motor->prev_duty_cycle*(motor->alpha);
-        motor->actual_duty_cycle = motor->duty_cycle;
-        if (motor->duty_cycle > 100)
-        {motor->duty_cycle = 100;}
-        else if (motor->duty_cycle < -100)
-        {motor->duty_cycle = -100;}
+        motor->duty_cycle = motor->duty_cycle * (1 - motor->alpha) + motor->prev_duty_cycle * (motor->alpha);
         motor->encoder.prev_rpm = motor->encoder.curr_rpm;
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
     }
-    write_duty_cycle(motor);
 }
 
 void write_duty_cycle(motor_t *motor)

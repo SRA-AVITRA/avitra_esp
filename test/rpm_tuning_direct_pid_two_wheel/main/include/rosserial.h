@@ -8,12 +8,9 @@ extern "C" {
 
 void rosserial_setup();
 
-// void rosserial_publish(encoder_t* encoder_L, encoder_t* encoder_R);
-void rosserial_publish(motor_t* motor_L, motor_t* motor_R);
+void rosserial_publish(float *duty_cycle_L, float *duty_cycle_R, float *desr_rpm_L, float *desr_rpm_R, float *curr_rpm_L, float *curr_rpm_R);
 
-void rosserial_subscribe(motor_t* motor_L, motor_t* motor_R);
-
-void rosserial_spinonce();
+void rosserial_subscribe(motor_t *motor_L, motor_t *motor_R);
 
 #ifdef __cplusplus
 }

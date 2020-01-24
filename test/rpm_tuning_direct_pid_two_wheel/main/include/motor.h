@@ -5,14 +5,13 @@
 #include "encoder.h"
 
 typedef struct{
-    int   id;    
+    int   id;
+    char name[10];
     float Kp;
     float Kd;
     float Ki;
 
-    char  name[10];    
     float duty_cycle;
-    float actual_duty_cycle;
     float prev_duty_cycle;
     float desr_rpm;
     float err;
@@ -24,7 +23,6 @@ typedef struct{
     float iTerm_limit;
     float alpha;
     
-    float opt;
     int64_t time;
     int64_t prev_time;
     mcpwm_t pwm_A;
