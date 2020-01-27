@@ -18,32 +18,27 @@ void init_motor(motor_t *motor)
 
 void calculate_duty_cycle(motor_t *motor)
 {
-    if (motor->desr_rpm == 0 || motor->Kp == 0 || motor->Ki == 0)
-    {
-        motor->err = 0;
-        motor->cum_err = 0;
-        motor->duty_cycle = 0;
-    }
-    else
+    if (motor->desr_rpm != 0 && motor->Kp != 0 && motor->Ki != 0)
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
         motor->pTerm = motor->Kp * motor->err;
         motor->dTerm = motor->Kd * 100 * (motor->err - motor->prev_err);
         motor->cum_err += motor->err / 5;
         motor->iTerm = motor->Ki * motor->cum_err;
-        if (motor->iTerm > abs(motor->desr_rpm) + 50)
-        {
-            motor->iTerm = 50;
-        }
-        else if (motor->iTerm < -abs(motor->desr_rpm) - 50)
-        {
-            motor->iTerm = -50;
-        }
         motor->duty_cycle = motor->pTerm + motor->dTerm + motor->iTerm;
         motor->duty_cycle = motor->duty_cycle * (1 - motor->alpha) + motor->prev_duty_cycle * (motor->alpha);
         motor->encoder.prev_rpm = motor->encoder.curr_rpm;
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
+    }
+    else
+    {
+        motor->err = 0;
+        motor->cum_err = 0;
+        motor->duty_cycle = 0;
+        motor->pTerm = 0;
+        motor->dTerm = 0;
+        motor->iTerm = 0;
     }
 }
 
