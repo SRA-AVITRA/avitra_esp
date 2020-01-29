@@ -21,4 +21,6 @@
     #define ENCODER_L_A     36
     #define ENCODER_L_B     39
 
+    #define kill_status 4
+
 #endif
