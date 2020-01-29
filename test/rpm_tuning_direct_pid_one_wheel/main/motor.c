@@ -18,24 +18,17 @@ void init_motor(motor_t *motor)
     init_mcpwm(&(motor->pwm_B));
 }
 
-float map(float variable, float fron_min, float from_max, float to_min, float to_max)
-{
-    return ((variable - fron_min) * (to_max - to_min) / (from_max - fron_min) + to_min);
-}
-
-//Normal PI
 void calculate_duty_cycle(motor_t *motor)
 {
-    if (motor->desr_rpm == 0 || motor->Kp == 0 || motor->Ki == 0)
+    if (motor->desr_rpm < 10)
     {
-        motor->err = 0;
-        motor->cum_err = 0;
-        motor->duty_cycle = 0;
-        motor->pTerm = 0;
-        motor->dTerm = 0;
-        motor->iTerm = 0;
+        motor->desr_rpm = 10;
     }
-    else
+    else if (motor->desr_rpm > 50)
+    {
+        motor->desr_rpm = 50;
+    }
+    if (gpio_get_level(kill_status) == 0)
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
         motor->pTerm = motor->Kp * motor->err;
@@ -47,6 +40,15 @@ void calculate_duty_cycle(motor_t *motor)
         motor->encoder.prev_rpm = motor->encoder.curr_rpm;
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
+    }
+    else
+    {
+        motor->err = 0;
+        motor->cum_err = 0;
+        motor->duty_cycle = 0;
+        motor->pTerm = 0;
+        motor->dTerm = 0;
+        motor->iTerm = 0;
     }
 }
 
