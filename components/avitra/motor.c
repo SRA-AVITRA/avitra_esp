@@ -12,43 +12,44 @@
 
 #include <math.h>
 
-float cum_err_factor = 0;
-float temp = 0;
-
 void init_motor(motor_t *motor)
 {
     init_mcpwm(&(motor->pwm_A));
     init_mcpwm(&(motor->pwm_B));
 }
 
-float map(float variable, float fron_min, float from_max, float to_min, float to_max)
-{
-    return ((variable - fron_min) * (to_max - to_min) / (from_max - fron_min) + to_min);
-}
-
-//Normal PI
 void calculate_duty_cycle(motor_t *motor)
 {
-    if(motor->Kp == 0 && motor->Kd == 0 && motor->Ki == 0)
+    if (motor->desr_rpm < 10)
     {
-        motor->err = 0;
-        motor->cum_err = 0;
-        motor->duty_cycle = 0;
+        motor->desr_rpm = 10;
     }
-    else
+    else if (motor->desr_rpm > 50)
+    {
+        motor->desr_rpm = 50;
+    }
+    if (gpio_get_level(kill_status) == 0)
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
         motor->pTerm = motor->Kp * motor->err;
-        motor->dTerm = motor->Kd * ((motor->err - motor->prev_err) * 100);
-        motor->cum_err += motor->err/5;
+        motor->dTerm = motor->Kd * 100 * (motor->err - motor->prev_err);
+        motor->cum_err += motor->err / 5;
         motor->iTerm = motor->Ki * motor->cum_err;
         motor->duty_cycle = motor->pTerm + motor->dTerm + motor->iTerm;
-        motor->actual_duty_cycle = motor->duty_cycle;
+        motor->duty_cycle = motor->duty_cycle * (1 - motor->alpha) + motor->prev_duty_cycle * (motor->alpha);
         motor->encoder.prev_rpm = motor->encoder.curr_rpm;
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
     }
-    write_duty_cycle(motor);
+    else
+    {
+        motor->err = 0;
+        motor->cum_err = 0;
+        motor->duty_cycle = 0;
+        motor->pTerm = 0;
+        motor->dTerm = 0;
+        motor->iTerm = 0;
+    }
 }
 
 void write_duty_cycle(motor_t *motor)

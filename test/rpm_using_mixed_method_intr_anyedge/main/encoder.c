@@ -60,10 +60,6 @@ void calculate_rpm(encoder_t* encoder)
     encoder->const_period_count++;
     if(encoder->ticks_count != 0)
     {
-        // encoder->pre_time_gap = encoder->current_time_gap;
-        // encoder->current_time_gap = encoder->time_gap_upper_limit - encoder->time_gap_lower_limit;
-        // encoder->eq_time = time_window*encoder->const_period_count + encoder->pre_time_gap - encoder->current_time_gap;
-        // encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/encoder->eq_time;
         encoder->curr_rpm = (encoder->ticks_count * RPM_FACTOR)/(time_window*encoder->const_period_count + encoder->pre_time_gap - (encoder->time_gap_upper_limit - encoder->time_gap_lower_limit));
         encoder->ticks_count = 0;
         encoder->const_period_count = 0;
