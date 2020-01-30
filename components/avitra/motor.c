@@ -10,8 +10,6 @@
 #include "esp_err.h"
 #include "esp_log.h"
 
-#include <math.h>
-
 void init_motor(motor_t *motor)
 {
     init_mcpwm(&(motor->pwm_A));
@@ -20,16 +18,16 @@ void init_motor(motor_t *motor)
 
 void calculate_duty_cycle(motor_t *motor)
 {
-    if (motor->desr_rpm < 10)
+    if (gpio_get_level(kill_status) == 0 && motor->desr_rpm != 0)
     {
-        motor->desr_rpm = 10;
-    }
-    else if (motor->desr_rpm > 50)
-    {
-        motor->desr_rpm = 50;
-    }
-    if (gpio_get_level(kill_status) == 0)
-    {
+        if (fabs(motor->desr_rpm) < 10)
+        {
+            motor->desr_rpm = motor->desr_rpm/fabs(motor->desr_rpm)*10;
+        }
+        else if (fabs(motor->desr_rpm) > 50)
+        {
+            motor->desr_rpm = motor->desr_rpm/fabs(motor->desr_rpm)*50;
+        }
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
         motor->pTerm = motor->Kp * motor->err;
         motor->dTerm = motor->Kd * 100 * (motor->err - motor->prev_err);
@@ -50,6 +48,7 @@ void calculate_duty_cycle(motor_t *motor)
         motor->dTerm = 0;
         motor->iTerm = 0;
     }
+    write_duty_cycle(motor);
 }
 
 void write_duty_cycle(motor_t *motor)
