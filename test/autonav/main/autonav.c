@@ -32,51 +32,59 @@ motor_t motor_B = (motor_t) {.name = "MOTOR_B", .id = 3, .desr_rpm = 0, .Kp = 0.
                         .pwm_A = {.pwm_unit = MCPWM_UNIT_1, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_A, .pwm_io_signals = MCPWM1A, .pwm_pin = MOTOR_B_PWM_A}, \
                         .pwm_B = {.pwm_unit = MCPWM_UNIT_1, .pwm_timer = MCPWM_TIMER_1, .pwm_operator = MCPWM_OPR_B, .pwm_io_signals = MCPWM1B, .pwm_pin = MOTOR_B_PWM_B}  \
                     };
-
-void ticks_publisher(){
+                    
+void ticks_publisher()
+{
     init_gpio(kill_status, GPIO_MODE_INPUT);
     init_encoder(&motor_L.encoder);
-    while(true){
-        rosserial_publish_ticks(&motor_L.encoder.total_ticks, &motor_R.encoder.total_ticks);
-        motor_L.encoder.total_ticks = 0;
-        motor_R.encoder.total_ticks = 0;
-        vTaskDelay(3 / portTICK_RATE_MS);   // 1 results in delay in ros_pub when echoed
+    init_encoder(&motor_R.encoder);
+    while (true)
+    {
+        vTaskDelay(3 / portTICK_RATE_MS); // 1 results in delay in ros_pub when echoed
     }
 }
 
-void bot_motion(){
-    init_encoder(&motor_R.encoder);
+void bot_motion()
+{
     int command = 0;
-    while(true){
+    while (true)
+    {
+        rosserial_publish_base_params(&motor_L.encoder.total_ticks, &motor_R.encoder.total_ticks, &motor_L.duty_cycle, &motor_R.duty_cycle, &motor_L.desr_rpm, &motor_R.desr_rpm, &motor_L.encoder.curr_rpm, &motor_R.encoder.curr_rpm);
         rosserial_subscribe_command(&command);
-        if(command == 0){
+        motor_L.encoder.total_ticks = 0;
+        motor_R.encoder.total_ticks = 0;
+        if (command == 0)
+        {
             rosserial_subscribe_teleop(&motor_F.duty_cycle, &motor_B.duty_cycle, &motor_L.duty_cycle, &motor_R.duty_cycle);
             write_duty_cycle(&motor_L);
             write_duty_cycle(&motor_R);
             write_duty_cycle(&motor_F);
             write_duty_cycle(&motor_B);
         }
-        else{
+        else
+        {
             rosserial_subscribe_rpm(&motor_L.desr_rpm, &motor_R.desr_rpm);
-            if(motor_L.desr_rpm * motor_R.desr_rpm < 0){     //break the front and back motors during translational motion
-              motor_F.duty_cycle = 0;
-              motor_B.duty_cycle = 0;
+            if (motor_L.desr_rpm * motor_R.desr_rpm < 0)
+            { //break the front and back motors during translational motion
+                motor_F.duty_cycle = 0;
+                motor_B.duty_cycle = 0;
             }
-            else{                                            //stop the front and back motors during rotational motion
-              motor_F.duty_cycle = -1;
-              motor_B.duty_cycle = -1;
+            else
+            { //stop the front and back motors during rotational motion
+                motor_F.duty_cycle = -1;
+                motor_B.duty_cycle = -1;
             }
             calculate_duty_cycle(&motor_L);
             calculate_duty_cycle(&motor_R);
             calculate_duty_cycle(&motor_F);
             calculate_duty_cycle(&motor_B);
-            rosserial_publish_base_params(&motor_L.duty_cycle, &motor_R.duty_cycle, &motor_L.desr_rpm, &motor_R.desr_rpm, &motor_L.encoder.curr_rpm, &motor_R.encoder.curr_rpm);
-        }        
+        }
         vTaskDelay(2 / portTICK_RATE_MS);
     }
 }
 
-void app_main(){
+void app_main()
+{
     rosserial_setup();
     init_motor(&motor_F);
     init_motor(&motor_L);
