@@ -40,6 +40,8 @@ void ticks_publisher()
     while (true)
     {
         rosserial_publish_base_params(&motor_L.encoder.total_ticks, &motor_R.encoder.total_ticks, &motor_L.desr_rpm, &motor_R.desr_rpm, &motor_L.encoder.curr_rpm, &motor_R.encoder.curr_rpm);
+        motor_L.encoder.total_ticks = 0;
+        motor_R.encoder.total_ticks = 0;
         vTaskDelay(3 / portTICK_RATE_MS); // 1 results in delay in ros_pub when echoed
     }
 }
@@ -51,8 +53,6 @@ void bot_motion()
     while (true)
     {
         rosserial_subscribe_command(&command);
-        motor_L.encoder.total_ticks = 0;
-        motor_R.encoder.total_ticks = 0;
         if (command == 0)
         {
             rosserial_subscribe_teleop(&motor_F.duty_cycle, &motor_B.duty_cycle, &motor_L.duty_cycle, &motor_R.duty_cycle);
