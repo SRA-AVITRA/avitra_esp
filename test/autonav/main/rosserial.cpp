@@ -42,12 +42,10 @@ void rosserial_setup()
 	rpm.motor_R = 0;
 }
 
-void rosserial_publish_base_params(volatile long int *ticks_L, volatile long int *ticks_R, float *duty_cycle_L, float *duty_cycle_R, float *desr_rpm_L, float *desr_rpm_R, float *curr_rpm_L, float *curr_rpm_R)
+void rosserial_publish_base_params(volatile long int *ticks_L, volatile long int *ticks_R, float *desr_rpm_L, float *desr_rpm_R, float *curr_rpm_L, float *curr_rpm_R)
 {
 	base_params.ticks_L = *ticks_L;
 	base_params.ticks_R = *ticks_R;
-	base_params.duty_cycle_L = *duty_cycle_L;
-	base_params.duty_cycle_R = *duty_cycle_R;
 	base_params.desr_rpm_L = *desr_rpm_L;
 	base_params.desr_rpm_R = *desr_rpm_R;
 	base_params.curr_rpm_L = *curr_rpm_L;

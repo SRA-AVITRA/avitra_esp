@@ -16,10 +16,6 @@ namespace auto_nav
       _ticks_L_type ticks_L;
       typedef int32_t _ticks_R_type;
       _ticks_R_type ticks_R;
-      typedef float _duty_cycle_L_type;
-      _duty_cycle_L_type duty_cycle_L;
-      typedef float _duty_cycle_R_type;
-      _duty_cycle_R_type duty_cycle_R;
       typedef float _desr_rpm_L_type;
       _desr_rpm_L_type desr_rpm_L;
       typedef float _desr_rpm_R_type;
@@ -32,8 +28,6 @@ namespace auto_nav
     base_params_msg():
       ticks_L(0),
       ticks_R(0),
-      duty_cycle_L(0),
-      duty_cycle_R(0),
       desr_rpm_L(0),
       desr_rpm_R(0),
       curr_rpm_L(0),
@@ -64,26 +58,6 @@ namespace auto_nav
       *(outbuffer + offset + 2) = (u_ticks_R.base >> (8 * 2)) & 0xFF;
       *(outbuffer + offset + 3) = (u_ticks_R.base >> (8 * 3)) & 0xFF;
       offset += sizeof(this->ticks_R);
-      union {
-        float real;
-        uint32_t base;
-      } u_duty_cycle_L;
-      u_duty_cycle_L.real = this->duty_cycle_L;
-      *(outbuffer + offset + 0) = (u_duty_cycle_L.base >> (8 * 0)) & 0xFF;
-      *(outbuffer + offset + 1) = (u_duty_cycle_L.base >> (8 * 1)) & 0xFF;
-      *(outbuffer + offset + 2) = (u_duty_cycle_L.base >> (8 * 2)) & 0xFF;
-      *(outbuffer + offset + 3) = (u_duty_cycle_L.base >> (8 * 3)) & 0xFF;
-      offset += sizeof(this->duty_cycle_L);
-      union {
-        float real;
-        uint32_t base;
-      } u_duty_cycle_R;
-      u_duty_cycle_R.real = this->duty_cycle_R;
-      *(outbuffer + offset + 0) = (u_duty_cycle_R.base >> (8 * 0)) & 0xFF;
-      *(outbuffer + offset + 1) = (u_duty_cycle_R.base >> (8 * 1)) & 0xFF;
-      *(outbuffer + offset + 2) = (u_duty_cycle_R.base >> (8 * 2)) & 0xFF;
-      *(outbuffer + offset + 3) = (u_duty_cycle_R.base >> (8 * 3)) & 0xFF;
-      offset += sizeof(this->duty_cycle_R);
       union {
         float real;
         uint32_t base;
@@ -155,28 +129,6 @@ namespace auto_nav
       union {
         float real;
         uint32_t base;
-      } u_duty_cycle_L;
-      u_duty_cycle_L.base = 0;
-      u_duty_cycle_L.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_duty_cycle_L.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_duty_cycle_L.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_duty_cycle_L.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
-      this->duty_cycle_L = u_duty_cycle_L.real;
-      offset += sizeof(this->duty_cycle_L);
-      union {
-        float real;
-        uint32_t base;
-      } u_duty_cycle_R;
-      u_duty_cycle_R.base = 0;
-      u_duty_cycle_R.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_duty_cycle_R.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_duty_cycle_R.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_duty_cycle_R.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
-      this->duty_cycle_R = u_duty_cycle_R.real;
-      offset += sizeof(this->duty_cycle_R);
-      union {
-        float real;
-        uint32_t base;
       } u_desr_rpm_L;
       u_desr_rpm_L.base = 0;
       u_desr_rpm_L.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
@@ -222,7 +174,7 @@ namespace auto_nav
     }
 
     const char * getType(){ return "auto_nav/base_params_msg"; };
-    const char * getMD5(){ return "87254fcf19f3263ef70bff812025b0a0"; };
+    const char * getMD5(){ return "4ec75baf2dbe72517636afe9c84dccfd"; };
 
   };
 
