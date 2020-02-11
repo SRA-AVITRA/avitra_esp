@@ -55,11 +55,8 @@ void bot_motion()
         motor_R.encoder.total_ticks = 0;
         if (command == 0)
         {
-            rosserial_subscribe_teleop(&motor_F.duty_cycle, &motor_B.duty_cycle, &motor_L.duty_cycle, &motor_R.duty_cycle);
-            write_duty_cycle(&motor_L);
-            write_duty_cycle(&motor_R);
-            write_duty_cycle(&motor_F);
-            write_duty_cycle(&motor_B);
+            // rosserial_subscribe_teleop(&motor_F.duty_cycle, &motor_B.duty_cycle, &motor_L.duty_cycle, &motor_R.duty_cycle);
+            rosserial_subscribe_teleop(&motor_F.desr_rpm, &motor_B.desr_rpm, &motor_L.desr_rpm, &motor_R.desr_rpm);
         }
         else
         {
@@ -74,11 +71,12 @@ void bot_motion()
                 motor_F.duty_cycle = -1;
                 motor_B.duty_cycle = -1;
             }
-            calculate_duty_cycle(&motor_L);
-            calculate_duty_cycle(&motor_R);
-            calculate_duty_cycle(&motor_F);
-            calculate_duty_cycle(&motor_B);
+            
         }
+        calculate_duty_cycle(&motor_L);
+        calculate_duty_cycle(&motor_R);
+        calculate_duty_cycle(&motor_F);
+        calculate_duty_cycle(&motor_B);
         vTaskDelay(2 / portTICK_RATE_MS);
     }
 }

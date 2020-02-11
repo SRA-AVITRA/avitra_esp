@@ -12,10 +12,14 @@ ros::Publisher espPub_base_params("base_params", &base_params);
 
 void callback_teleop(const auto_nav::velocity_msg &msg)
 {
-	velocity.motor_F = msg.motor_F;
-	velocity.motor_B = msg.motor_B;
-	velocity.motor_L = msg.motor_L;
-	velocity.motor_R = msg.motor_R;
+	// velocity.motor_F = msg.motor_F;
+	// velocity.motor_B = msg.motor_B;
+	// velocity.motor_L = msg.motor_L;
+	// velocity.motor_R = msg.motor_R;
+	rpm.motor_F = msg.motor_F;
+	rpm.motor_B = msg.motor_B;
+	rpm.motor_L = msg.motor_L;
+	rpm.motor_R = msg.motor_R;
 	velocity.command = msg.command;
 }
 ros::Subscriber<auto_nav::velocity_msg> espSub_teleop("teleop", &callback_teleop);
@@ -54,12 +58,17 @@ void rosserial_publish_base_params(volatile long int *ticks_L, volatile long int
 	nh.spinOnce();
 }
 
-void rosserial_subscribe_teleop(float *duty_F, float *duty_B, float *duty_L, float *duty_R)
+void rosserial_subscribe_teleop(float *desr_rpm_F, float *desr_rpm_B, float *desr_rpm_L, float *desr_rpm_R)
 {
-	*duty_F = velocity.motor_F;
-	*duty_B = velocity.motor_B;
-	*duty_L = velocity.motor_L;
-	*duty_R = velocity.motor_R;
+	// *duty_F = velocity.motor_F;
+	// *duty_B = velocity.motor_B;
+	// *duty_L = velocity.motor_L;
+	// *duty_R = velocity.motor_R;
+	*desr_rpm_F = rpm.motor_F;
+	*desr_rpm_B = rpm.motor_B;
+	*desr_rpm_L = rpm.motor_L;
+	*desr_rpm_R = rpm.motor_R;
+
 	nh.spinOnce();
 }
 
