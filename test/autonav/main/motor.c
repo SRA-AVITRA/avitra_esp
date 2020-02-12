@@ -18,23 +18,19 @@ void init_motor(motor_t *motor)
 
 void calculate_duty_cycle(motor_t *motor)
 {
-    if (gpio_get_level(kill_status) == 0 && motor->desr_rpm != 0)
+    if (gpio_get_level(kill_status) == 0 && fabs(motor->desr_rpm) > 10 && fabs(motor->desr_rpm) < 40)
     {
-        if (fabs(motor->desr_rpm) < 10)
-        {
-            motor->desr_rpm = motor->desr_rpm/fabs(motor->desr_rpm)*10;
-        }
-        else if (fabs(motor->desr_rpm) > 50)
-        {
-            motor->desr_rpm = motor->desr_rpm/fabs(motor->desr_rpm)*50;
-        }
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
         motor->pTerm = motor->Kp * motor->err;
         motor->dTerm = motor->Kd * 100 * (motor->err - motor->prev_err);
         motor->cum_err += motor->err / 5;
+        if (fabs(motor->cum_err) > 172)
+        {
+            motor->cum_err = motor->cum_err/fabs(motor->cum_err)*170;
+        }
         motor->iTerm = motor->Ki * motor->cum_err;
         motor->duty_cycle = motor->pTerm + motor->dTerm + motor->iTerm;
-        motor->duty_cycle = motor->duty_cycle * (1 - motor->alpha) + motor->prev_duty_cycle * (motor->alpha);
+        // motor->duty_cycle = motor->duty_cycle * (1 - motor->alpha) + motor->prev_duty_cycle * (motor->alpha);
         motor->encoder.prev_rpm = motor->encoder.curr_rpm;
         motor->prev_err = motor->err;
         motor->prev_duty_cycle = motor->duty_cycle;
