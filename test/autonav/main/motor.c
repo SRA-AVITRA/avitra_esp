@@ -48,7 +48,6 @@ void calculate_duty_cycle(motor_t *motor)
         motor->dTerm = 0;
         motor->iTerm = 0;
     }
-    write_duty_cycle(motor);
 }
 
 void write_duty_cycle(motor_t *motor)

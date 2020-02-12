@@ -16,8 +16,8 @@ void callback_teleop(const auto_nav::velocity_msg &msg)
 	// velocity.motor_B = msg.motor_B;
 	// velocity.motor_L = msg.motor_L;
 	// velocity.motor_R = msg.motor_R;
-	rpm.motor_F = msg.motor_F;
-	rpm.motor_B = msg.motor_B;
+	rpm.motor_F = 0;
+	rpm.motor_B = 0;
 	rpm.motor_L = msg.motor_L;
 	rpm.motor_R = msg.motor_R;
 	velocity.command = msg.command;
