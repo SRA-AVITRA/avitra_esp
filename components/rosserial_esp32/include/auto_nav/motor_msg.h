@@ -1,5 +1,5 @@
-#ifndef _ROS_auto_nav_velocity_msg_h
-#define _ROS_auto_nav_velocity_msg_h
+#ifndef _ROS_auto_nav_motor_msg_h
+#define _ROS_auto_nav_motor_msg_h
 
 #include <stdint.h>
 #include <string.h>
@@ -9,13 +9,9 @@
 namespace auto_nav
 {
 
-  class velocity_msg : public ros::Msg
+  class motor_msg : public ros::Msg
   {
     public:
-      typedef float _motor_F_type;
-      _motor_F_type motor_F;
-      typedef float _motor_B_type;
-      _motor_B_type motor_B;
       typedef float _motor_L_type;
       _motor_L_type motor_L;
       typedef float _motor_R_type;
@@ -23,9 +19,7 @@ namespace auto_nav
       typedef int8_t _command_type;
       _command_type command;
 
-    velocity_msg():
-      motor_F(0),
-      motor_B(0),
+    motor_msg():
       motor_L(0),
       motor_R(0),
       command(0)
@@ -35,26 +29,6 @@ namespace auto_nav
     virtual int serialize(unsigned char *outbuffer) const
     {
       int offset = 0;
-      union {
-        float real;
-        uint32_t base;
-      } u_motor_F;
-      u_motor_F.real = this->motor_F;
-      *(outbuffer + offset + 0) = (u_motor_F.base >> (8 * 0)) & 0xFF;
-      *(outbuffer + offset + 1) = (u_motor_F.base >> (8 * 1)) & 0xFF;
-      *(outbuffer + offset + 2) = (u_motor_F.base >> (8 * 2)) & 0xFF;
-      *(outbuffer + offset + 3) = (u_motor_F.base >> (8 * 3)) & 0xFF;
-      offset += sizeof(this->motor_F);
-      union {
-        float real;
-        uint32_t base;
-      } u_motor_B;
-      u_motor_B.real = this->motor_B;
-      *(outbuffer + offset + 0) = (u_motor_B.base >> (8 * 0)) & 0xFF;
-      *(outbuffer + offset + 1) = (u_motor_B.base >> (8 * 1)) & 0xFF;
-      *(outbuffer + offset + 2) = (u_motor_B.base >> (8 * 2)) & 0xFF;
-      *(outbuffer + offset + 3) = (u_motor_B.base >> (8 * 3)) & 0xFF;
-      offset += sizeof(this->motor_B);
       union {
         float real;
         uint32_t base;
@@ -91,28 +65,6 @@ namespace auto_nav
       union {
         float real;
         uint32_t base;
-      } u_motor_F;
-      u_motor_F.base = 0;
-      u_motor_F.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_motor_F.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_motor_F.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_motor_F.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
-      this->motor_F = u_motor_F.real;
-      offset += sizeof(this->motor_F);
-      union {
-        float real;
-        uint32_t base;
-      } u_motor_B;
-      u_motor_B.base = 0;
-      u_motor_B.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
-      u_motor_B.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
-      u_motor_B.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
-      u_motor_B.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
-      this->motor_B = u_motor_B.real;
-      offset += sizeof(this->motor_B);
-      union {
-        float real;
-        uint32_t base;
       } u_motor_L;
       u_motor_L.base = 0;
       u_motor_L.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
@@ -143,8 +95,8 @@ namespace auto_nav
      return offset;
     }
 
-    const char * getType(){ return "auto_nav/velocity_msg"; };
-    const char * getMD5(){ return "21b3af5f05909321ae725972801b3693"; };
+    const char * getType(){ return "auto_nav/motor_msg"; };
+    const char * getMD5(){ return "abd541b618c1fbc7bfae63b5a2338e1f"; };
 
   };
 
