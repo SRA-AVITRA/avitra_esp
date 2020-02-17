@@ -18,6 +18,14 @@ void init_motor(motor_t *motor)
 
 void calculate_duty_cycle(motor_t *motor)
 {
+    if (fabs(motor->desr_rpm) < 11)
+    {
+        motor->desr_rpm = motor->desr_rpm / fabs(motor->desr_rpm) * 11;
+    }
+    else if (fabs(motor->desr_rpm) > 39)
+    {
+        motor->desr_rpm = motor->desr_rpm / fabs(motor->desr_rpm) * 39;
+    }
     if (gpio_get_level(kill_status) == 0 && fabs(motor->desr_rpm) > 10 && fabs(motor->desr_rpm) < 40)
     {
         motor->err = (motor->desr_rpm - motor->encoder.curr_rpm) / 10;
@@ -26,7 +34,7 @@ void calculate_duty_cycle(motor_t *motor)
         motor->cum_err += motor->err / 5;
         if (fabs(motor->cum_err) > 172)
         {
-            motor->cum_err = motor->cum_err/fabs(motor->cum_err)*170;
+            motor->cum_err = motor->cum_err / fabs(motor->cum_err) * 170;
         }
         motor->iTerm = motor->Ki * motor->cum_err;
         motor->duty_cycle = motor->pTerm + motor->dTerm + motor->iTerm;

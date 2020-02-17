@@ -55,7 +55,7 @@ void bot_motion()
         rosserial_subscribe_command(&command);
         if (command == 0)
         {
-            rosserial_subscribe_teleop(&motor_F.desr_rpm, &motor_B.desr_rpm, &motor_L.desr_rpm, &motor_R.desr_rpm);
+            rosserial_subscribe_teleop(&motor_L.desr_rpm, &motor_R.desr_rpm);
         }
         else
         {

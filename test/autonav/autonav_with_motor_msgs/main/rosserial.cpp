@@ -50,7 +50,7 @@ void rosserial_publish_base_params(volatile long int *ticks_L, volatile long int
 	nh.spinOnce();
 }
 
-void rosserial_subscribe_teleop(float *desr_rpm_F, float *desr_rpm_B, float *desr_rpm_L, float *desr_rpm_R)
+void rosserial_subscribe_teleop(float *desr_rpm_L, float *desr_rpm_R)
 {
 	*desr_rpm_L = rpm_from_teleop.motor_L;
 	*desr_rpm_R = rpm_from_teleop.motor_R;

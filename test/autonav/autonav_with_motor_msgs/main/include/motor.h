@@ -15,6 +15,7 @@ typedef struct{
     float actual_duty_cycle;
     float prev_duty_cycle;
     float desr_rpm;
+    float prev_desr_rpm;
     float err;
     float prev_err;
     float cum_err;
